@@ -155,9 +155,9 @@ certificate; see `docs/updates-and-release.md`.
 The updater is active only in packaged builds (`app.isPackaged`); development
 builds report "disabled". It requires a public GitHub Releases page containing
 `latest.yml`, the installer and its blockmap. `electron-builder.yml` points
-`publish` at owner `dexterity-design`, repo `minutes`; change both to your
-own repository before you cut a release, or installed copies will look for
-updates in the wrong place. Only one channel (`latest`) and one architecture
+`publish` at owner `freddyaltrin`, repo `minutes` (github.com/freddyaltrin/minutes);
+installed copies look there for `latest.yml`, so releases must be published to
+that repository. Only one channel (`latest`) and one architecture
 (x64) are built. The installer must carry the ≈ 41 MB whisper runtime
 (`resources/whisper/win-x64`); see `docs/updates-and-release.md`.
 

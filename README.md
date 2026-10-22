@@ -185,9 +185,8 @@ What the tests cover is in `docs/testing.md`.
 Packaging is configured in `electron-builder.yml`: an NSIS installer for
 Windows x64, per-user install, user data never removed on uninstall, output in
 `release/` as `Minutes-Setup-<version>.exe` with `latest.yml` and a blockmap.
-The `publish` block points at GitHub owner `dexterity-design`, repo
-`minutes`; change both to your own repository before releasing, since
-installed copies look there for updates. `npm run dist:win` also works from
+The `publish` block points at GitHub owner `freddyaltrin`, repo `minutes`
+(github.com/freddyaltrin/minutes), where installed copies look for updates. `npm run dist:win` also works from
 Linux with wine; see "Building the Windows installer on Linux" in
 `docs/updates-and-release.md`.
 

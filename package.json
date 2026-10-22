@@ -1,14 +1,14 @@
 {
   "name": "minutes",
   "productName": "Minutes",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Minutes — a private, offline-first meeting notes desktop application. Local CPU-only speech recognition (whisper.cpp), no uploads, no accounts, no subscriptions.",
   "main": "./out/main/index.js",
   "author": "Dexterity Design Services Pvt. Ltd.",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/dexterity-design/minutes",
-  "repository": { "type": "git", "url": "https://github.com/dexterity-design/minutes.git" },
+  "homepage": "https://github.com/freddyaltrin/minutes",
+  "repository": { "type": "git", "url": "https://github.com/freddyaltrin/minutes.git" },
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",

@@ -93,19 +93,19 @@ Prerequisites, once:
 
 Each release:
 
-1. **Bump the version** in `package.json` (`"version": "0.2.0"`). electron-updater
+1. **Bump the version** in `package.json` (`"version": "0.2.4"`). electron-updater
    only offers an update when the published version is *greater* than the
    installed one, so never re-publish the same version with different bits.
-2. Commit, then tag: `git tag v0.2.0 && git push --tags`. The tag must be
+2. Commit, then tag: `git tag v0.2.4 && git push --tags`. The tag must be
    `v<version>` — that is the URL electron-updater resolves.
 3. **Build**: `npm run dist:win`. Output in `release/`:
-   - `Minutes-Setup-0.2.0.exe` — the NSIS installer (now ≈ 41 MB larger than
+   - `Minutes-Setup-0.2.4.exe` — the NSIS installer (now ≈ 41 MB larger than
      a build without the runtime; the blockmap keeps differential updates
      small when the runtime is unchanged)
-   - `Minutes-Setup-0.2.0.exe.blockmap` — for differential downloads
+   - `Minutes-Setup-0.2.4.exe.blockmap` — for differential downloads
    - `latest.yml` — version + SHA-512 manifest
 4. **Publish**, one of:
-   - Manual: create a GitHub release for tag `v0.2.0`, paste release notes into
+   - Manual: create a GitHub release for tag `v0.2.4`, paste release notes into
      the body (they are shown in-app), and upload **all three files**. Do not
      mark it as a pre-release — `allowPrerelease` is false, so it would be ignored.
    - Automatic: `GH_TOKEN=… npx electron-builder --win --x64 --publish always`

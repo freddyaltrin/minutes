@@ -1,4 +1,4 @@
-# Acceptance checklist (status at 0.2.3)
+# Acceptance checklist (status at 0.2.4)
 
 Each line states what was actually verified, where, and what remains to be checked on a Windows machine.
 "Verified (Linux VM)" means the behaviour was exercised in the built application under Xvfb with Playwright

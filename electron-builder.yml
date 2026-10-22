@@ -50,6 +50,6 @@ nsis:
 publish:
   # Change owner/repo to the GitHub repository that hosts releases, then release with GH_TOKEN set.
   provider: github
-  owner: dexterity-design
+  owner: freddyaltrin
   repo: minutes
   releaseType: release
