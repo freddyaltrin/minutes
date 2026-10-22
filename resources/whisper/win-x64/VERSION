@@ -1,0 +1,1 @@
+whisper.cpp 1.9.1 (ggml 0.15.1) — CPU-only build: BUILD_SHARED_LIBS=ON GGML_NATIVE=OFF GGML_BACKEND_DL=ON GGML_CPU_ALL_VARIANTS=ON GGML_OPENMP=OFF; MinGW-w64 GCC 13 cross build, static libgcc/libstdc++/winpthread; built 2026-10-20 from the v1.9.1 source tree (scripts/whisper/build-runtime.sh)

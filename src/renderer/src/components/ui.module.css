@@ -1,0 +1,457 @@
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: var(--control-h);
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--fg);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.button:hover {
+  background: var(--bg-hover);
+}
+.button:active {
+  background: var(--bg-active);
+}
+.button:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.button[data-variant='primary'] {
+  background: var(--accent);
+  color: var(--fg-on-accent);
+}
+.button[data-variant='primary']:hover {
+  background: var(--accent-hover);
+}
+.button[data-variant='outline'] {
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+}
+.button[data-variant='outline']:hover {
+  background: var(--bg-hover);
+}
+.button[data-variant='danger'] {
+  color: var(--danger);
+}
+.button[data-variant='danger']:hover {
+  background: var(--danger-bg);
+}
+.button[data-variant='recording'] {
+  background: var(--recording);
+  color: #fff;
+}
+.button[data-variant='recording']:hover {
+  filter: brightness(1.08);
+}
+.button[data-size='sm'] {
+  height: 24px;
+  padding: 0 8px;
+  font-size: var(--text-sm);
+}
+.button[data-size='lg'] {
+  height: 34px;
+  padding: 0 14px;
+  font-size: var(--text-base);
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-h);
+  height: var(--control-h);
+  border-radius: var(--radius-md);
+  color: var(--fg-secondary);
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+  flex: none;
+}
+.iconButton:hover {
+  background: var(--bg-hover);
+  color: var(--fg);
+}
+.iconButton:active,
+.iconButton[data-active='true'] {
+  background: var(--bg-active);
+  color: var(--fg);
+}
+.iconButton:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.iconButton[data-size='sm'] {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Inputs ---------- */
+.input {
+  height: var(--control-h);
+  padding: 0 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  font-size: var(--text-md);
+  width: 100%;
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.input::placeholder {
+  color: var(--fg-muted);
+}
+.input:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(91, 141, 239, 0.2);
+}
+.input:disabled {
+  opacity: 0.5;
+}
+textarea.input {
+  height: auto;
+  padding: 6px 8px;
+  resize: vertical;
+  line-height: var(--leading-normal);
+}
+.select {
+  composes: input;
+  padding-right: 24px;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--fg-muted) 50%), linear-gradient(135deg, var(--fg-muted) 50%, transparent 50%);
+  background-position: calc(100% - 13px) 12px, calc(100% - 9px) 12px;
+  background-size: 4px 4px;
+  background-repeat: no-repeat;
+}
+
+/* ---------- Switch ---------- */
+.switch {
+  position: relative;
+  width: 32px;
+  height: 18px;
+  border-radius: var(--radius-pill);
+  background: var(--fg-faint);
+  transition: background var(--dur-base) var(--ease);
+  flex: none;
+}
+.switch[aria-checked='true'] {
+  background: var(--accent);
+}
+.switch:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform var(--dur-base) var(--ease);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.switch[aria-checked='true']::after {
+  transform: translateX(14px);
+}
+:global([data-theme='dark']) .switch[aria-checked='true']::after {
+  background: var(--bg);
+}
+
+/* ---------- Menu / popover ---------- */
+.popover {
+  position: fixed;
+  z-index: 100;
+  min-width: 180px;
+  max-width: 340px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  padding: 4px;
+  animation: popIn var(--dur-fast) var(--ease);
+  transform-origin: top left;
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-md);
+  color: var(--fg);
+  text-align: left;
+}
+.menuItem:hover,
+.menuItem[data-focused='true'] {
+  background: var(--bg-hover);
+}
+.menuItem[data-danger='true'] {
+  color: var(--danger);
+}
+.menuItem[data-danger='true']:hover {
+  background: var(--danger-bg);
+}
+.menuItem:disabled {
+  opacity: 0.45;
+}
+.menuItem svg {
+  color: var(--fg-secondary);
+  flex: none;
+}
+.menuItem[data-danger='true'] svg {
+  color: inherit;
+}
+.menuCheck {
+  color: var(--fg);
+  margin-left: 8px;
+}
+.menuLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menuShortcut {
+  font-size: var(--text-xs);
+  color: var(--fg-muted);
+  margin-left: 12px;
+}
+.menuSeparator {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 6px;
+}
+.menuHeading {
+  padding: 6px 8px 2px;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Dialog ---------- */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(31, 29, 26, 0.28);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  animation: fadeIn var(--dur-base) var(--ease);
+}
+:global([data-theme='dark']) .backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.dialog {
+  background: var(--bg-elevated);
+  border-radius: 12px;
+  box-shadow: var(--shadow-dialog);
+  width: min(560px, calc(100vw - 48px));
+  max-height: 76vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: dialogIn var(--dur-base) var(--ease);
+}
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.dialogHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 10px;
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+}
+.dialogBody {
+  padding: 0 16px 16px;
+  overflow: auto;
+  font-size: var(--text-md);
+  color: var(--fg-secondary);
+  user-select: text;
+}
+.dialogFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Tooltip ---------- */
+.tooltip {
+  position: fixed;
+  z-index: 120;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: var(--text-xs);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn var(--dur-fast) var(--ease);
+}
+.tooltip kbd {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: transparent;
+  color: inherit;
+  height: 16px;
+}
+:global([data-theme='dark']) .tooltip kbd {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- Toast ---------- */
+.toasts {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  pointer-events: none;
+}
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--fg);
+  color: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: 8px 10px 8px 14px;
+  font-size: var(--text-md);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  animation: toastIn var(--dur-base) var(--ease);
+  max-width: 480px;
+}
+.toast[data-kind='error'] {
+  background: var(--danger);
+  color: #fff;
+}
+.toastAction {
+  font-weight: var(--weight-semibold);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  color: inherit;
+}
+.toastAction:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+:global([data-theme='light']) .toast:not([data-kind='error']) .toastAction:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Empty state ---------- */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sp-10) var(--sp-6);
+  color: var(--fg-muted);
+  gap: 6px;
+  height: 100%;
+  min-height: 160px;
+}
+.emptyTitle {
+  color: var(--fg-secondary);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-md);
+}
+.emptyBody {
+  font-size: var(--text-sm);
+  max-width: 300px;
+  line-height: var(--leading-relaxed);
+}
+.emptyAction {
+  margin-top: 8px;
+}
+
+/* ---------- Segmented ---------- */
+.segmented {
+  display: inline-flex;
+  background: var(--bg-inset);
+  border-radius: var(--radius-md);
+  padding: 2px;
+  gap: 2px;
+}
+.segment {
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 4px;
+  font-size: var(--text-sm);
+  color: var(--fg-secondary);
+  font-weight: var(--weight-medium);
+}
+.segment:hover {
+  color: var(--fg);
+}
+.segment[aria-pressed='true'] {
+  background: var(--bg-elevated);
+  color: var(--fg);
+  box-shadow: 0 1px 2px rgba(31, 29, 26, 0.1);
+}
+/* In dark mode the elevated surface is too close to the inset track to read as "selected". */
+:global([data-theme='dark']) .segmented {
+  background: var(--bg-hover);
+}
+:global([data-theme='dark']) .segment[aria-pressed='true'] {
+  background: var(--bg-active);
+  box-shadow: none;
+}

@@ -1,0 +1,10 @@
+Good morning everyone, this is the weekly project review for Monday the fourteenth of September. Present today are Priya, Deepak, Rahul, Vetri and myself. Let us start with the as-built isometric package. Priya, where do we stand?
+Thanks. As of Friday evening we have issued two hundred and forty seven isometrics out of three hundred and ten. That is seventy nine percent complete. The remaining sixty three sheets are in checking and we expect to close them by Thursday the twenty fourth.
+Good. Deepak, what about the piping support drawings for the de-oiling unit?
+We have one hundred and twelve welded supports and forty eight bolted supports detailed. The client returned eleven comments on revision two, mostly about weld symbols and the gusset plate thickness. We have resolved nine of the eleven and the last two need a reply from the stress team.
+Please chase the stress team today and copy me on the mail. Rahul, the server for the new design tool, is it installed?
+Yes, the machine arrived on Wednesday. It has sixteen gigabytes of memory and an eight core processor. I have installed the modelling software and the licence is valid until the thirty first of March next year.
+Vetri, two admin points. First, the office will be closed on Friday the second of October for the public holiday. Second, the quarterly invoice for the Ajman office must go out before the fifteenth, so please send the draft to me by Wednesday.
+Noted. I will also book the conference room for the client visit on the twentieth at ten thirty in the morning.
+One more item. The budget for the second half of the year is four point two million rupees, which is about eight percent higher than the first half. We need to keep overtime under two hundred hours per month across the team.
+Any other business? No? Then we close at nine fifty two. Thank you all, same time next week.

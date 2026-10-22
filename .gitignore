@@ -1,0 +1,10 @@
+node_modules
+out
+dist
+release
+*.log
+.DS_Store
+resources/whisper/linux-x64/
+*.part0*
+minutes.bundle
+*.tsbuildinfo

@@ -1,0 +1,183 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  -webkit-app-region: no-drag;
+}
+
+.record {
+  gap: 6px;
+}
+
+.starting {
+  color: var(--fg-muted);
+}
+
+/* ---------- live pill ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: var(--control-h);
+  padding: 0 4px 0 10px;
+  border-radius: var(--radius-pill);
+  background: var(--recording-soft);
+  color: var(--recording);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+.pill[data-paused='true'] {
+  color: var(--fg-secondary);
+  background: var(--bg-inset);
+}
+
+/* the clickable body (bars + time); separate from the control buttons */
+.body {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding-right: 4px;
+  border-radius: var(--radius-pill);
+  color: inherit;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+.body:hover {
+  opacity: 0.8;
+}
+.body:active {
+  opacity: 0.65;
+}
+.body:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+.bar {
+  width: 2px;
+  height: 2px;
+  min-height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  /* height is driven by inline style from a ref; the transition smooths the 15 Hz updates */
+  transition: height var(--dur-fast) linear;
+}
+.pill[data-paused='true'] .bar {
+  transition: none;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+  min-width: 34px;
+  text-align: left;
+}
+
+.systemDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--system);
+  margin-left: -2px;
+  flex: none;
+}
+.systemDot[data-quiet='true'] {
+  opacity: 0.35;
+}
+
+.pillButton {
+  color: inherit;
+  width: 24px;
+  height: 24px;
+}
+.pillButton:hover {
+  background: var(--bg-hover);
+}
+
+.otherTitle {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: var(--weight-regular);
+}
+
+.goto {
+  height: 22px;
+  padding: 0 8px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: inherit;
+  border: 1px solid currentColor;
+  transition: background var(--dur-fast) var(--ease);
+}
+.goto:hover {
+  background: var(--bg-hover);
+}
+.goto:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ---------- status + error ---------- */
+.status {
+  font-size: var(--text-xs);
+  color: var(--fg-muted);
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.status[data-kind='warn'] {
+  color: var(--warning);
+}
+.status[data-kind='error'] {
+  color: var(--danger);
+}
+
+.error {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  color: var(--danger);
+  max-width: 260px;
+}
+.errorText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.retry {
+  color: var(--danger);
+  font-weight: var(--weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.retry:hover {
+  opacity: 0.8;
+}
+.retry:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+.dialogBody {
+  font-size: var(--text-md);
+  color: var(--fg-secondary);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}

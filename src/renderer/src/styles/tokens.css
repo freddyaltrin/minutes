@@ -1,0 +1,137 @@
+/* Minutes design tokens. Warm neutral, paper-like palette. Accent is used only for
+   recording state, focus rings and the single primary action. */
+
+:root {
+  /* type */
+  --font-ui: -apple-system, 'Segoe UI Variable Text', 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --text-xs: 11px;
+  --text-sm: 12.5px;
+  --text-md: 13.5px;
+  --text-base: 15px;
+  --text-lg: 17px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --leading-tight: 1.25;
+  --leading-normal: 1.45;
+  --leading-relaxed: 1.65;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* spacing (4px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+
+  /* layout */
+  --titlebar-h: 38px;
+  --sidebar-w: 248px;
+  --list-w: 300px;
+  --panel-w: 360px;
+  --editor-max-w: 720px;
+  --row-h: 28px;
+  --control-h: 28px;
+
+  /* motion */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 260ms;
+
+  /* light palette */
+  --bg: #fbfaf7;
+  --bg-sidebar: #f3f1ec;
+  --bg-elevated: #ffffff;
+  --bg-hover: rgba(31, 29, 26, 0.05);
+  --bg-active: rgba(31, 29, 26, 0.09);
+  --bg-selected: rgba(31, 29, 26, 0.08);
+  --bg-inset: #f1efe9;
+  --bg-mark: rgba(214, 160, 48, 0.28);
+  --fg: #1f1d1a;
+  --fg-secondary: #5c5850;
+  --fg-muted: #777266;
+  --fg-faint: #9b9587;
+  --fg-on-accent: #ffffff;
+  --border: rgba(31, 29, 26, 0.1);
+  --border-strong: rgba(31, 29, 26, 0.18);
+  --accent: #1f1d1a;
+  --accent-hover: #363330;
+  --focus: #5b8def;
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px rgba(91, 141, 239, 0.55);
+  --link: #2d5fc4;
+  --danger: #c0392b;
+  --danger-bg: rgba(192, 57, 43, 0.08);
+  --success: #2f7d4f;
+  --success-bg: rgba(47, 125, 79, 0.1);
+  --warning: #9a6b00;
+  --warning-bg: rgba(214, 160, 48, 0.14);
+  --recording: #d2452d;
+  --recording-soft: rgba(210, 69, 45, 0.12);
+  --mic: #2f7d4f;
+  --system: #5c5850;
+  --shadow-popover: 0 4px 16px rgba(31, 29, 26, 0.12), 0 0 0 1px rgba(31, 29, 26, 0.08);
+  --shadow-dialog: 0 16px 48px rgba(31, 29, 26, 0.2), 0 0 0 1px rgba(31, 29, 26, 0.08);
+  --scrollbar: rgba(31, 29, 26, 0.22);
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #1c1b19;
+  --bg-sidebar: #171614;
+  --bg-elevated: #242320;
+  --bg-hover: rgba(255, 252, 245, 0.06);
+  --bg-active: rgba(255, 252, 245, 0.11);
+  --bg-selected: rgba(255, 252, 245, 0.1);
+  --bg-inset: #211f1c;
+  --bg-mark: rgba(214, 160, 48, 0.32);
+  --fg: #ece8df;
+  --fg-secondary: #b5b0a5;
+  --fg-muted: #908a7f;
+  --fg-faint: #716b61;
+  --fg-on-accent: #1c1b19;
+  --border: rgba(255, 252, 245, 0.1);
+  --border-strong: rgba(255, 252, 245, 0.18);
+  --accent: #ece8df;
+  --accent-hover: #ffffff;
+  --focus: #7ba4f5;
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px rgba(123, 164, 245, 0.6);
+  --link: #8db0f5;
+  --danger: #e2675a;
+  --danger-bg: rgba(226, 103, 90, 0.14);
+  --success: #5fb57f;
+  --success-bg: rgba(95, 181, 127, 0.14);
+  --warning: #d6a030;
+  --warning-bg: rgba(214, 160, 48, 0.16);
+  --recording: #e5583f;
+  --recording-soft: rgba(229, 88, 63, 0.16);
+  --mic: #5fb57f;
+  --system: #b5b0a5;
+  --shadow-popover: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 252, 245, 0.1);
+  --shadow-dialog: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 252, 245, 0.1);
+  --scrollbar: rgba(255, 252, 245, 0.22);
+
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+  }
+}

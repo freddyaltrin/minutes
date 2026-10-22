@@ -1,0 +1,3062 @@
+{
+  "startedAt": "2026-10-20T12:34:38.562Z",
+  "label": "Linux VM 2-core stand-in for weak office PC",
+  "environment": {
+    "platform": "linux",
+    "arch": "x64",
+    "kernel": "6.18.44-fc-v139",
+    "node": "v22.22.0",
+    "logicalCores": 2,
+    "cpuModel": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "totalMemBytes": 8419655680,
+    "cpuFlags": [
+      "sse4_2",
+      "avx",
+      "avx2",
+      "fma",
+      "f16c",
+      "avx512f",
+      "avx512bw",
+      "avx512_vnni",
+      "avx_vnni",
+      "avx512_bf16",
+      "amx_tile",
+      "amx_int8",
+      "hypervisor"
+    ],
+    "runtimeVersion": "whisper.cpp 1.9.1 (ggml 0.15.1) — CPU-only build: BUILD_SHARED_LIBS=ON GGML_NATIVE=OFF GGML_BACKEND_DL=ON GGML_CPU_ALL_VARIANTS=ON GGML_OPENMP=OFF; GCC 13 native build; built 2026-10-20 from the v1.9.1 source tree (scripts/whisper/build-runtime.sh)",
+    "hypervisor": true
+  },
+  "runtimeDir": "/home/claude/minutes/resources/whisper/linux-x64",
+  "modelsDir": "/home/claude/models",
+  "chunkMs": 12000,
+  "audio": [
+    {
+      "name": "jfk.wav",
+      "path": "/tmp/claude-0/-home-claude/f9b91c5f-5dd6-59d4-a2b2-069855a0b185/scratchpad/bench-audio/jfk.wav",
+      "seconds": 11,
+      "hasReference": true,
+      "referencePath": "/tmp/claude-0/-home-claude/f9b91c5f-5dd6-59d4-a2b2-069855a0b185/scratchpad/bench-audio/jfk.ref.txt"
+    },
+    {
+      "name": "sample-16k.wav",
+      "path": "/tmp/claude-0/-home-claude/f9b91c5f-5dd6-59d4-a2b2-069855a0b185/scratchpad/bench-audio/sample-16k.wav",
+      "seconds": 20.13,
+      "hasReference": false,
+      "referencePath": null
+    },
+    {
+      "name": "long_en.wav",
+      "path": "/tmp/claude-0/-home-claude/f9b91c5f-5dd6-59d4-a2b2-069855a0b185/scratchpad/bench-audio/long_en.wav",
+      "seconds": 445.38,
+      "hasReference": false,
+      "referencePath": null
+    },
+    {
+      "name": "synthetic-meeting.wav",
+      "path": "/tmp/claude-0/-home-claude/f9b91c5f-5dd6-59d4-a2b2-069855a0b185/scratchpad/bench-audio/synthetic-meeting.wav",
+      "seconds": 117.89,
+      "hasReference": true,
+      "referencePath": "/tmp/claude-0/-home-claude/f9b91c5f-5dd6-59d4-a2b2-069855a0b185/scratchpad/bench-audio/synthetic-meeting.ref.txt"
+    }
+  ],
+  "runs": [
+    {
+      "modelId": "tiny.en-q5_1",
+      "modelFile": "ggml-tiny.en-q5_1.bin",
+      "modelSizeBytes": 32166155,
+      "verification": {
+        "verified": true,
+        "sha256": "c77c5766f1cef09b6b7d47f21b546cbddd4157886b3b5d6d4f709e91e66c7c2b",
+        "sizeBytes": 32166155
+      },
+      "threads": 1,
+      "loadMs": 149.68,
+      "cpuVariant": "sapphirerapids",
+      "pid": 8947,
+      "command": "/home/claude/minutes/resources/whisper/linux-x64/whisper-server -m /home/claude/models/ggml-tiny.en-q5_1.bin -t 1 --host 127.0.0.1 --port 41933 --no-gpu",
+      "files": [
+        {
+          "audio": "jfk.wav",
+          "audioSeconds": 11,
+          "hasReference": true,
+          "whole": {
+            "processingMs": 3811.67,
+            "rtf": 0.347,
+            "peakRssBytes": 109686784,
+            "maxSampledRssBytes": 109686784,
+            "cpuCores": 0.97,
+            "rssSamples": 19,
+            "ui": {
+              "maxTickDelayMs": 7.1,
+              "ticks": 37
+            },
+            "completeness": {
+              "words": 22,
+              "segments": 3,
+              "wordsPerMinute": 120,
+              "segmentCoverage": 0.962,
+              "lastSegmentEndCoverage": 0.962
+            },
+            "wer": {
+              "wer": 0,
+              "substitutions": 0,
+              "insertions": 0,
+              "deletions": 0,
+              "referenceWords": 22,
+              "hypothesisWords": 22
+            },
+            "text": "And so my fellow Americans ask not what your country can do for you ask what you can do for your country.",
+            "segments": [
+              {
+                "start": 0,
+                "end": 6.88,
+                "text": "And so my fellow Americans ask not what your country can do"
+              },
+              {
+                "start": 6.88,
+                "end": 7.74,
+                "text": "for you"
+              },
+              {
+                "start": 7.74,
+                "end": 10.58,
+                "text": "ask what you can do for your country."
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 1,
+            "processingMs": 3592.11,
+            "rtf": 0.327,
+            "latencyP50Ms": 3592.11,
+            "latencyP95Ms": 3592.11,
+            "latencyMaxMs": 3592.11,
+            "lagSec": -7.41,
+            "maxQueueLagSec": 0,
+            "peakRssBytes": 112627712,
+            "maxSampledRssBytes": 112627712,
+            "cpuCores": 0.98,
+            "ui": {
+              "maxTickDelayMs": 0.8,
+              "ticks": 35
+            },
+            "completeness": {
+              "words": 22,
+              "segments": 3,
+              "wordsPerMinute": 120,
+              "segmentCoverage": 0.962,
+              "lastSegmentEndCoverage": 0.962
+            },
+            "wer": {
+              "wer": 0,
+              "substitutions": 0,
+              "insertions": 0,
+              "deletions": 0,
+              "referenceWords": 22,
+              "hypothesisWords": 22
+            },
+            "text": "And so my fellow Americans ask not what your country can do for you ask what you can do for your country.",
+            "perChunk": [
+              {
+                "seconds": 11,
+                "ms": 3592.11,
+                "rtf": 0.327,
+                "lagSec": -7.41,
+                "words": 22
+              }
+            ]
+          }
+        },
+        {
+          "audio": "sample-16k.wav",
+          "audioSeconds": 20.13,
+          "hasReference": false,
+          "whole": {
+            "processingMs": 3686.19,
+            "rtf": 0.183,
+            "peakRssBytes": 120344576,
+            "maxSampledRssBytes": 119410688,
+            "cpuCores": 0.99,
+            "rssSamples": 20,
+            "ui": {
+              "maxTickDelayMs": 6.2,
+              "ticks": 36
+            },
+            "completeness": {
+              "words": 57,
+              "segments": 8,
+              "wordsPerMinute": 169.87,
+              "segmentCoverage": 0.932,
+              "lastSegmentEndCoverage": 0.932
+            },
+            "wer": null,
+            "text": "Alice was beginning to get very tired of sitting by her sister on the bank and of having nothing to do. Once or twice she had peeped into the book her sister was reading but it had no pictures or conversations in it and what is the use of a book called Alice without pictures or conversations.",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4.76,
+                "text": "Alice was beginning to get very tired of sitting by her"
+              },
+              {
+                "start": 4.76,
+                "end": 7.24,
+                "text": "sister on the bank and of having"
+              },
+              {
+                "start": 7.24,
+                "end": 8.64,
+                "text": "nothing to do."
+              },
+              {
+                "start": 8.64,
+                "end": 11.51,
+                "text": "Once or twice she had peeped into the book her sister was"
+              },
+              {
+                "start": 11.51,
+                "end": 13.16,
+                "text": "reading but it had no pictures"
+              },
+              {
+                "start": 13.16,
+                "end": 16.31,
+                "text": "or conversations in it and what is the use of a book called"
+              },
+              {
+                "start": 16.31,
+                "end": 17.92,
+                "text": "Alice without pictures or"
+              },
+              {
+                "start": 17.92,
+                "end": 18.76,
+                "text": "conversations."
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 2,
+            "processingMs": 6489.34,
+            "rtf": 0.322,
+            "latencyP50Ms": 3186.4,
+            "latencyP95Ms": 3302.93,
+            "latencyMaxMs": 3302.93,
+            "lagSec": -13.64,
+            "maxQueueLagSec": 0,
+            "peakRssBytes": 141438976,
+            "maxSampledRssBytes": 141438976,
+            "cpuCores": 0.99,
+            "ui": {
+              "maxTickDelayMs": 0.8,
+              "ticks": 64
+            },
+            "completeness": {
+              "words": 57,
+              "segments": 8,
+              "wordsPerMinute": 169.87,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": null,
+            "text": "Alice was beginning to get very tired of sitting by her sister on the bank and of having nothing to do. Once or twice she had peeped into the book her sister was reading. But it had no pictures or conversations in it and what is the use of a book thought Alice without pictures or conversations.",
+            "perChunk": [
+              {
+                "seconds": 12,
+                "ms": 3302.93,
+                "rtf": 0.275,
+                "lagSec": -8.7,
+                "words": 34
+              },
+              {
+                "seconds": 8.13,
+                "ms": 3186.4,
+                "rtf": 0.392,
+                "lagSec": -13.64,
+                "words": 23
+              }
+            ]
+          }
+        },
+        {
+          "audio": "long_en.wav",
+          "audioSeconds": 445.38,
+          "hasReference": false,
+          "whole": {
+            "processingMs": 51632.03,
+            "rtf": 0.116,
+            "peakRssBytes": 330919936,
+            "maxSampledRssBytes": 330919936,
+            "cpuCores": 0.98,
+            "rssSamples": 258,
+            "ui": {
+              "maxTickDelayMs": 33.4,
+              "ticks": 513
+            },
+            "completeness": {
+              "words": 947,
+              "segments": 112,
+              "wordsPerMinute": 127.58,
+              "segmentCoverage": 0.819,
+              "lastSegmentEndCoverage": 0.937
+            },
+            "wer": null,
+            "text": "♪♪ ♪♪ Oh, this sauce! I'm Jake and thank you for visiting because I have been stuck in this chair for weeks! Why you ask? Let me tell you, it's because of this! And what is that? Well, my dear friend, as you may know, I have cancer to try and stop it from spreading their mughal out of flesh, muscle tissue and bone, and replaced it with something else . And that got me thinking about what makes you, you, which then turned out me thinking about paradoxes, specifically logical paradoxes or thought experiments. You know, there is one in particular that pertains to the removal and replacement of certain things. Let's go outside. Quick little side note, I also figured out teleportation, but we'll discuss that later. You know, you should come out here too. So we can discuss the ship of Theseus. The ship of Theseus is fairly straightforward as far as logical paradoxes go. Let's say we have a ship, and it's a very nice ship. But after a while we end up replacing all the wood, and then a while later we replace the sails, then a while later we replace all the hooks. Is it still the same ship? Or is it a new ship? A different ship. Let's go a step further. Let's say we kept all the pieces we replaced and used them to make another ship, an identical one. Is this one the original? Or is this one the original? Or are they both not original? What makes something truly original? I need some sand. Here we have what I would consider a heap of sand. Which leads us into our next logical paradox, the Sarites paradox. Sarites in Ancient Greek meaning heap. So here we have our heap, right? But what happens if we take away a grain of sand? Well it's still a heap. But then we take away another grain of sand. Still a heap. But then we take another. And another. Until we get this. Is this a heap? What about this? Or this? If we remove a grain until only one is left. Is this still a heap? At what point do we no longer consider it? A heap. Let's reverse it. We start with a single grain of sand. Obviously not what we would call a heap. But then we add a grain. And another. And another. When does it become a heap of sand? You know instead of using objects as our examples let's discuss a paradox that instead uses words. We interact with words every day, but today we 're going to focus on just two words. Autological and heterological. These are essential for the grilling Nelson paradox. An ontological word is a word that describes itself. For example pronounceable is pronounceable. Polysylabic is polysylabic and a noun is a noun. Then there is heterological where a word does not describe itself. For example purple is not purple. Triangle is not a triangle and hyphenated is not hyphenated. The paradox comes into play when we ask the question is the word heterological heterological. If you say no then heterological does not describe itself. And if it's not heterological then it must be ontological and describe itself. But if it is ontological then heterological describes itself. And therefore heterological is heterological paradox. If you say yes heterological does not describe itself then that means heterological is not heterological paradox. Let's try something. Let's combine aspects of the ship of Thesisius and the Saridys paradox and apply it to ourselves. Even though part of my leg was replaced I am still me. Right? My entire leg were removed I would still be me. So what points am I no longer myself? How much would have to be removed for you to no longer be you? Where's what makes us us our memories of who we are and of who we were? For example you are different than when you were a baby. Obviously you're taller, a little bit heavier, you have different hair, different teeth and all of your cells have been replaced since birth. I mean your personality has changed, your opinions have changed. So how are you the same person? You know maybe we should lay off the teleportation for a little bit not just because of that but also because I've been thinking of something. The teletransportation paradox. Let's say we have a machine that can teleport you from here to there. In order to transmit you though the machine kills you and instantly breaks you down to all the atoms that once made you up. It then transmits all the data of what you were to another machine in a different location which remakes you, putting different atoms in the right spot. So the question is is the person who went into the machine the same person coming out of the other machine. You have the same memories, the same thoughts but everything that physically makes you is different. You'd remember everything up to being teleported and reemerging on the other side. Everything in between would be lost. So is it your identity your emotions, feelings and is it your thoughts that make you you? You know you should come a little bit closer. When you wake up in the morning how do you know you're the same person as who went to sleep? How do I know that when I close my eyes it's the same jake opening them. Maybe every time we open our eyes we're being created again from the idea of who we are, from our sense of identity and as always thanks for watching. so you",
+            "segments": [
+              {
+                "start": 0,
+                "end": 12.96,
+                "text": "♪♪"
+              },
+              {
+                "start": 12.96,
+                "end": 20.64,
+                "text": "♪♪"
+              },
+              {
+                "start": 20.64,
+                "end": 24,
+                "text": "Oh, this sauce! I'm Jake and thank you for visiting because"
+              },
+              {
+                "start": 24,
+                "end": 27.28,
+                "text": "I have been stuck in this chair for weeks!"
+              },
+              {
+                "start": 27.28,
+                "end": 31.76,
+                "text": "Why you ask? Let me tell you, it's because of this! And"
+              },
+              {
+                "start": 31.76,
+                "end": 33.6,
+                "text": "what is that? Well, my dear friend,"
+              },
+              {
+                "start": 33.6,
+                "end": 36.800000000000004,
+                "text": "as you may know, I have cancer to try and stop it from"
+              },
+              {
+                "start": 36.800000000000004,
+                "end": 38.72,
+                "text": "spreading their mughal out of flesh,"
+              },
+              {
+                "start": 38.72,
+                "end": 42.53,
+                "text": "muscle tissue and bone, and replaced it with something else"
+              },
+              {
+                "start": 42.53,
+                "end": 45.12,
+                "text": ". And that got me thinking about what"
+              },
+              {
+                "start": 45.12,
+                "end": 48.5,
+                "text": "makes you, you, which then turned out me thinking about"
+              },
+              {
+                "start": 48.5,
+                "end": 51.44,
+                "text": "paradoxes, specifically logical paradoxes"
+              },
+              {
+                "start": 51.44,
+                "end": 54.63,
+                "text": "or thought experiments. You know, there is one in"
+              },
+              {
+                "start": 54.63,
+                "end": 56.88,
+                "text": "particular that pertains to the removal"
+              },
+              {
+                "start": 56.88,
+                "end": 62.230000000000004,
+                "text": "and replacement of certain things. Let's go outside. Quick"
+              },
+              {
+                "start": 62.230000000000004,
+                "end": 64.48,
+                "text": "little side note, I also figured"
+              },
+              {
+                "start": 64.48,
+                "end": 67.76,
+                "text": "out teleportation, but we'll discuss that later. You know,"
+              },
+              {
+                "start": 67.76,
+                "end": 70.56,
+                "text": "you should come out here too. So we can"
+              },
+              {
+                "start": 70.56,
+                "end": 75.9,
+                "text": "discuss the ship of Theseus. The ship of Theseus is fairly"
+              },
+              {
+                "start": 75.9,
+                "end": 80.56,
+                "text": "straightforward as far as logical paradoxes go."
+              },
+              {
+                "start": 80.56,
+                "end": 83.43,
+                "text": "Let's say we have a ship, and it's a very nice ship. But"
+              },
+              {
+                "start": 83.43,
+                "end": 85.28,
+                "text": "after a while we end up replacing all the"
+              },
+              {
+                "start": 85.28,
+                "end": 87.68,
+                "text": "wood, and then a while later we replace the sails, then a"
+              },
+              {
+                "start": 87.68,
+                "end": 89.84,
+                "text": "while later we replace all the hooks."
+              },
+              {
+                "start": 89.84,
+                "end": 93.17,
+                "text": "Is it still the same ship? Or is it a new ship? A different"
+              },
+              {
+                "start": 93.17,
+                "end": 94.88,
+                "text": "ship. Let's go a step further."
+              },
+              {
+                "start": 94.88,
+                "end": 97.83,
+                "text": "Let's say we kept all the pieces we replaced and used them"
+              },
+              {
+                "start": 97.83,
+                "end": 100.48,
+                "text": "to make another ship, an identical one."
+              },
+              {
+                "start": 100.48,
+                "end": 103.23,
+                "text": "Is this one the original? Or is this one the original? Or"
+              },
+              {
+                "start": 103.23,
+                "end": 106.24000000000001,
+                "text": "are they both not original? What makes"
+              },
+              {
+                "start": 106.24000000000001,
+                "end": 111.37,
+                "text": "something truly original? I need some sand. Here we have"
+              },
+              {
+                "start": 111.37,
+                "end": 114.96000000000001,
+                "text": "what I would consider a heap of sand."
+              },
+              {
+                "start": 115.68,
+                "end": 119.62,
+                "text": "Which leads us into our next logical paradox, the Sarites"
+              },
+              {
+                "start": 119.62,
+                "end": 122.64,
+                "text": "paradox. Sarites in Ancient Greek"
+              },
+              {
+                "start": 122.64,
+                "end": 126.65,
+                "text": "meaning heap. So here we have our heap, right? But what"
+              },
+              {
+                "start": 126.65,
+                "end": 129.52,
+                "text": "happens if we take away a grain of sand?"
+              },
+              {
+                "start": 129.52,
+                "end": 132.89000000000001,
+                "text": "Well it's still a heap. But then we take away another grain"
+              },
+              {
+                "start": 132.89000000000001,
+                "end": 135.44,
+                "text": "of sand. Still a heap. But then we take"
+              },
+              {
+                "start": 135.44,
+                "end": 139.98,
+                "text": "another. And another. Until we get this. Is this a heap?"
+              },
+              {
+                "start": 139.98,
+                "end": 143.12,
+                "text": "What about this? Or this? If we remove a"
+              },
+              {
+                "start": 143.12,
+                "end": 146.83,
+                "text": "grain until only one is left. Is this still a heap? At what"
+              },
+              {
+                "start": 146.83,
+                "end": 149.92000000000002,
+                "text": "point do we no longer consider it? A heap."
+              },
+              {
+                "start": 149.92000000000002,
+                "end": 152.72,
+                "text": "Let's reverse it. We start with a single grain of sand."
+              },
+              {
+                "start": 152.72,
+                "end": 154.8,
+                "text": "Obviously not what we would call a heap."
+              },
+              {
+                "start": 154.8,
+                "end": 158,
+                "text": "But then we add a grain. And another. And another. When"
+              },
+              {
+                "start": 158,
+                "end": 160.08,
+                "text": "does it become a heap of sand?"
+              },
+              {
+                "start": 160.88,
+                "end": 163.42000000000002,
+                "text": "You know instead of using objects as our examples let's"
+              },
+              {
+                "start": 163.42000000000002,
+                "end": 165.36,
+                "text": "discuss a paradox that instead"
+              },
+              {
+                "start": 165.92000000000002,
+                "end": 171.28,
+                "text": "uses words. We interact with words every day, but today we"
+              },
+              {
+                "start": 171.28,
+                "end": 172.72,
+                "text": "'re going to focus on just"
+              },
+              {
+                "start": 172.72,
+                "end": 176.49,
+                "text": "two words. Autological and heterological. These are"
+              },
+              {
+                "start": 176.49,
+                "end": 179.04,
+                "text": "essential for the grilling Nelson paradox."
+              },
+              {
+                "start": 183.28,
+                "end": 186.66,
+                "text": "An ontological word is a word that describes itself. For"
+              },
+              {
+                "start": 186.66,
+                "end": 188.96,
+                "text": "example pronounceable is pronounceable."
+              },
+              {
+                "start": 189.6,
+                "end": 195.14000000000001,
+                "text": "Polysylabic is polysylabic and a noun is a noun. Then there"
+              },
+              {
+                "start": 195.14000000000001,
+                "end": 197.52,
+                "text": "is heterological where a word does not"
+              },
+              {
+                "start": 197.52,
+                "end": 201.81,
+                "text": "describe itself. For example purple is not purple. Triangle"
+              },
+              {
+                "start": 201.81,
+                "end": 204.56,
+                "text": "is not a triangle and hyphenated is not"
+              },
+              {
+                "start": 204.56,
+                "end": 209.38,
+                "text": "hyphenated. The paradox comes into play when we ask the"
+              },
+              {
+                "start": 209.38,
+                "end": 211.28,
+                "text": "question is the word heterological"
+              },
+              {
+                "start": 211.84,
+                "end": 215.6,
+                "text": "heterological. If you say no then heterological does not"
+              },
+              {
+                "start": 215.6,
+                "end": 217.44,
+                "text": "describe itself. And if it's not"
+              },
+              {
+                "start": 217.44,
+                "end": 220.35,
+                "text": "heterological then it must be ontological and describe"
+              },
+              {
+                "start": 220.35,
+                "end": 222.24,
+                "text": "itself. But if it is ontological then"
+              },
+              {
+                "start": 222.24,
+                "end": 226.23000000000002,
+                "text": "heterological describes itself. And therefore heterological"
+              },
+              {
+                "start": 226.23000000000002,
+                "end": 229.36,
+                "text": "is heterological paradox. If you say yes"
+              },
+              {
+                "start": 229.36,
+                "end": 232.74,
+                "text": "heterological does not describe itself then that means"
+              },
+              {
+                "start": 232.74,
+                "end": 236.48000000000002,
+                "text": "heterological is not heterological paradox."
+              },
+              {
+                "start": 236.48000000000002,
+                "end": 239.05,
+                "text": "Let's try something. Let's combine aspects of the ship of"
+              },
+              {
+                "start": 239.05,
+                "end": 241.36,
+                "text": "Thesisius and the Saridys paradox and apply"
+              },
+              {
+                "start": 241.36,
+                "end": 245.41,
+                "text": "it to ourselves. Even though part of my leg was replaced I"
+              },
+              {
+                "start": 245.41,
+                "end": 247.76000000000002,
+                "text": "am still me. Right? My entire leg"
+              },
+              {
+                "start": 247.76000000000002,
+                "end": 251.02,
+                "text": "were removed I would still be me. So what points am I no"
+              },
+              {
+                "start": 251.02,
+                "end": 253.36,
+                "text": "longer myself? How much would have to be"
+              },
+              {
+                "start": 253.36,
+                "end": 258.11,
+                "text": "removed for you to no longer be you? Where's what makes us"
+              },
+              {
+                "start": 258.11,
+                "end": 261.04,
+                "text": "us our memories of who we are and of who"
+              },
+              {
+                "start": 261.04,
+                "end": 263.91,
+                "text": "we were? For example you are different than when you were a"
+              },
+              {
+                "start": 263.91,
+                "end": 265.68,
+                "text": "baby. Obviously you're taller,"
+              },
+              {
+                "start": 265.68,
+                "end": 268.48,
+                "text": "a little bit heavier, you have different hair, different"
+              },
+              {
+                "start": 268.48,
+                "end": 270.08,
+                "text": "teeth and all of your cells have been"
+              },
+              {
+                "start": 270.08,
+                "end": 274.43,
+                "text": "replaced since birth. I mean your personality has changed,"
+              },
+              {
+                "start": 274.43,
+                "end": 277.2,
+                "text": "your opinions have changed. So how are you"
+              },
+              {
+                "start": 277.76,
+                "end": 287.47,
+                "text": "the same person? You know maybe we should lay off the"
+              },
+              {
+                "start": 287.47,
+                "end": 291.92,
+                "text": "teleportation for a little bit not just"
+              },
+              {
+                "start": 291.92,
+                "end": 294.48,
+                "text": "because of that but also because I've been thinking of"
+              },
+              {
+                "start": 294.48,
+                "end": 296.88,
+                "text": "something. The teletransportation paradox."
+              },
+              {
+                "start": 298.32,
+                "end": 301.04,
+                "text": "Let's say we have a machine that can teleport you from here"
+              },
+              {
+                "start": 301.04,
+                "end": 303.28000000000003,
+                "text": "to there. In order to transmit"
+              },
+              {
+                "start": 303.28000000000003,
+                "end": 306.06,
+                "text": "you though the machine kills you and instantly breaks you"
+              },
+              {
+                "start": 306.06,
+                "end": 307.92,
+                "text": "down to all the atoms that once made you"
+              },
+              {
+                "start": 307.92,
+                "end": 310.48,
+                "text": "up. It then transmits all the data of what you were to"
+              },
+              {
+                "start": 310.48,
+                "end": 313.04,
+                "text": "another machine in a different location"
+              },
+              {
+                "start": 313.04,
+                "end": 316.27,
+                "text": "which remakes you, putting different atoms in the right"
+              },
+              {
+                "start": 316.27,
+                "end": 320.16,
+                "text": "spot. So the question is is the person"
+              },
+              {
+                "start": 320.16,
+                "end": 323.26,
+                "text": "who went into the machine the same person coming out of the"
+              },
+              {
+                "start": 323.26,
+                "end": 325.2,
+                "text": "other machine. You have the same"
+              },
+              {
+                "start": 325.2,
+                "end": 329.09000000000003,
+                "text": "memories, the same thoughts but everything that physically"
+              },
+              {
+                "start": 329.09000000000003,
+                "end": 331.36,
+                "text": "makes you is different. You'd remember"
+              },
+              {
+                "start": 331.36,
+                "end": 333.99,
+                "text": "everything up to being teleported and reemerging on the"
+              },
+              {
+                "start": 333.99,
+                "end": 337.2,
+                "text": "other side. Everything in between would be"
+              },
+              {
+                "start": 337.2,
+                "end": 341.36,
+                "text": "lost. So is it your identity your emotions, feelings and is"
+              },
+              {
+                "start": 341.36,
+                "end": 344.40000000000003,
+                "text": "it your thoughts that make you you?"
+              },
+              {
+                "start": 345.36,
+                "end": 347.86,
+                "text": "You know you should come a little bit closer. When you wake"
+              },
+              {
+                "start": 347.86,
+                "end": 349.44,
+                "text": "up in the morning how do you know"
+              },
+              {
+                "start": 349.44,
+                "end": 353.11,
+                "text": "you're the same person as who went to sleep? How do I know"
+              },
+              {
+                "start": 353.11,
+                "end": 355.36,
+                "text": "that when I close my eyes it's the same"
+              },
+              {
+                "start": 355.36,
+                "end": 359.36,
+                "text": "jake opening them. Maybe every time we open our eyes we're"
+              },
+              {
+                "start": 359.36,
+                "end": 362,
+                "text": "being created again from the idea of"
+              },
+              {
+                "start": 362,
+                "end": 369.21,
+                "text": "who we are, from our sense of identity and as always thanks"
+              },
+              {
+                "start": 369.21,
+                "end": 371.36,
+                "text": "for watching."
+              },
+              {
+                "start": 385.36,
+                "end": 387.36,
+                "text": "so"
+              },
+              {
+                "start": 415.36,
+                "end": 417.36,
+                "text": "you"
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 38,
+            "processingMs": 170276.41,
+            "rtf": 0.382,
+            "latencyP50Ms": 3881.81,
+            "latencyP95Ms": 8775.25,
+            "latencyMaxMs": 9759.2,
+            "lagSec": -275.11,
+            "maxQueueLagSec": 7.39,
+            "peakRssBytes": 330919936,
+            "maxSampledRssBytes": 330919936,
+            "cpuCores": 0.99,
+            "ui": {
+              "maxTickDelayMs": 63.9,
+              "ticks": 1692
+            },
+            "completeness": {
+              "words": 961,
+              "segments": 111,
+              "wordsPerMinute": 129.46,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": null,
+            "text": "♪♪ Oh! This sauce! I'm Jake, and thank you for visiting because I'm not sure. Because I have been stuck in this chair for weeks! Why you ask? Let me tell you, it's because of this! And what is that? Well, my dear friend, as you may know, I have cancer. To try and stop it from spreading, there moved a lot of flesh, muscle tissue and bone, and replaced it with something else. And that got me thinking about what makes you you, which that in turn got me. And thinking about paradoxes, specifically logical paradox es are thought experiments. You know, there is one in particular that pertains to the removal and replacement of certain things. Let's go outside. Quick little side note, I also figured out teleportation, but we'll discuss that later. You know, you should come out here too. So we can discuss the ship of Theseus. The ship of Theseus is fairly straightforward as far as logical paradoxes go. Let's say we have a ship, and it's a very nice ship, but I've got to say, I'm not sure why we ended up replacing all the wood , and then a while later, replace the sails, then a while later replace all the hooks . Is it still the same ship, or is it a new ship? A different ship. Let's go is depth further. Let's say we kept all the people. This is where we replaced and used them to make another ship, an identical one. Is this one the original? Or is this one the original? Or are they both not original? What makes something truly a original? I need some sand. Here we have what I would consider a heap of sand, which leads us into our next logical paradox, the Saratys Paradox. Sarities in Ancient Greek meaning heap. So here we have our heap, right? But what happens if we take away a grain of sand? Well, still a heap, but then we take away another grain of sand. Still a heap, but then we take another and another until we get this. Is this a heap? What about this? Or this? If we remove a grain until only one is left, is this still a heap? At what point do we no longer consider it? A heap? Let's reverse it. We start with a single grain of sand. Obviously not what we would call a heap, but then we add a grain. And another. And another. When does it become a heap of sand? You know instead of using objects as our examples, let's discuss a paradox that instead uses words. We interact with words every day, but today we're going to focus on just two words, audiological and heterological. These are essential for the grilling Nelson paradox. An ontological word is a word that describes itself. For example, pronounceable is pronounceable. Polysyllabic is polysyllabic. And the noun is a noun. Then there is heterological, where a word does not describe itself. For example, purple is not purple. Triangle is not a triangle and hyphenated is not hyphenated. The paradox comes into play when we ask the question is the word heterological, heterological. If you say no, then heterological does not describe itself. And if it's not heterological, then it must be ontological and describe itself. But if it is ont ological, then heterological describes itself. And therefore , heterological is heterological paradox. If you say yes, heterological does not describe itself, then that means heterological is not heterological paradox. Let's try something. Let's combine aspects of the ship of Thesisus and the Stridey's paradox and apply it to ourselves. Even though part of my leg was replaced, I am still me. Right? My entire leg were removed, I would still be me. So what point do I no longer my self? How much would have to be removed for you to no longer be you? Where's what makes us us our memories of who we are and of who we were? For example you are different than when you were a baby? Obviously you're taller, a little bit heavier, you have different hair, different teeth, and all your cells have been replaced since birth. I mean your personality has changed your opinions have changed. So how are you the same person? You know... Maybe we should lay off the teleportation for a little bit, not just because of that, but also because I've been thinking of something. The teletransportation paradox. Let 's say we have a machine that can teleport you from here to there. In order to transmit you though the machine kills you and instantly breaks you down to all the atoms that once made you up. It then transmits all the data of what you were to another machine in a different location which remakes you, putting different atoms in the right spot. So the question is is the person who went into the machine the same person coming out of the other machine. You have the same memories, the same thoughts, but everything that physically makes you is different. You'd remember everything up to being teleported and reemerging on the other side. Everything in between would be lost. So is it your identity, your emotions, feelings, and is it your thoughts that make you you know you should come a little bit closer. When you wake up in the morning, how do you know you're the same person as who went to sleep? How do I know that when I close my eyes is the same Jake opening them? Maybe every time we open our eyes we're being created again from the idea of who we are, from our sense of identity and as always thanks for watching. Thank you. ♪♪♪♪ ♪♪♪ ♪♪♪ ♪♪♪♪ ♪♪♪♪♪ ♪♪♪♪♪♪♪ ♪♪♪ ♪♪♪♪♪♪♪ .",
+            "perChunk": [
+              {
+                "seconds": 12,
+                "ms": 3859.71,
+                "rtf": 0.322,
+                "lagSec": -8.14,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 4013.69,
+                "rtf": 0.334,
+                "lagSec": -16.13,
+                "words": 14
+              },
+              {
+                "seconds": 12,
+                "ms": 4038.88,
+                "rtf": 0.337,
+                "lagSec": -24.09,
+                "words": 36
+              },
+              {
+                "seconds": 12,
+                "ms": 4432.23,
+                "rtf": 0.369,
+                "lagSec": -31.66,
+                "words": 39
+              },
+              {
+                "seconds": 12,
+                "ms": 3843.02,
+                "rtf": 0.32,
+                "lagSec": -39.81,
+                "words": 28
+              },
+              {
+                "seconds": 12,
+                "ms": 3881.81,
+                "rtf": 0.323,
+                "lagSec": -47.93,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 3910.86,
+                "rtf": 0.326,
+                "lagSec": -56.02,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 6037.65,
+                "rtf": 0.503,
+                "lagSec": -61.98,
+                "words": 56
+              },
+              {
+                "seconds": 12,
+                "ms": 6384.17,
+                "rtf": 0.532,
+                "lagSec": -67.6,
+                "words": 37
+              },
+              {
+                "seconds": 12,
+                "ms": 4442.96,
+                "rtf": 0.37,
+                "lagSec": -75.16,
+                "words": 27
+              },
+              {
+                "seconds": 12,
+                "ms": 3667.31,
+                "rtf": 0.306,
+                "lagSec": -83.49,
+                "words": 33
+              },
+              {
+                "seconds": 12,
+                "ms": 3710.85,
+                "rtf": 0.309,
+                "lagSec": -91.78,
+                "words": 34
+              },
+              {
+                "seconds": 12,
+                "ms": 3726.26,
+                "rtf": 0.311,
+                "lagSec": -100.05,
+                "words": 44
+              },
+              {
+                "seconds": 12,
+                "ms": 3838.77,
+                "rtf": 0.32,
+                "lagSec": -108.21,
+                "words": 29
+              },
+              {
+                "seconds": 12,
+                "ms": 3873.54,
+                "rtf": 0.323,
+                "lagSec": -116.34,
+                "words": 27
+              },
+              {
+                "seconds": 12,
+                "ms": 3751.54,
+                "rtf": 0.313,
+                "lagSec": -124.59,
+                "words": 17
+              },
+              {
+                "seconds": 12,
+                "ms": 3519.45,
+                "rtf": 0.293,
+                "lagSec": -133.07,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 4130.66,
+                "rtf": 0.344,
+                "lagSec": -140.94,
+                "words": 26
+              },
+              {
+                "seconds": 12,
+                "ms": 4139.21,
+                "rtf": 0.345,
+                "lagSec": -148.8,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 4221.21,
+                "rtf": 0.352,
+                "lagSec": -156.58,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 4467.39,
+                "rtf": 0.372,
+                "lagSec": -164.11,
+                "words": 38
+              },
+              {
+                "seconds": 12,
+                "ms": 3807.27,
+                "rtf": 0.317,
+                "lagSec": -172.3,
+                "words": 41
+              },
+              {
+                "seconds": 12,
+                "ms": 3999.99,
+                "rtf": 0.333,
+                "lagSec": -180.3,
+                "words": 33
+              },
+              {
+                "seconds": 12,
+                "ms": 3409.06,
+                "rtf": 0.284,
+                "lagSec": -188.89,
+                "words": 9
+              },
+              {
+                "seconds": 12,
+                "ms": 3839.17,
+                "rtf": 0.32,
+                "lagSec": -197.05,
+                "words": 37
+              },
+              {
+                "seconds": 12,
+                "ms": 4579.7,
+                "rtf": 0.382,
+                "lagSec": -204.47,
+                "words": 45
+              },
+              {
+                "seconds": 12,
+                "ms": 3781.06,
+                "rtf": 0.315,
+                "lagSec": -212.69,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 3537.13,
+                "rtf": 0.295,
+                "lagSec": -221.16,
+                "words": 33
+              },
+              {
+                "seconds": 12,
+                "ms": 3957.79,
+                "rtf": 0.33,
+                "lagSec": -229.2,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 3647.48,
+                "rtf": 0.304,
+                "lagSec": -237.55,
+                "words": 44
+              },
+              {
+                "seconds": 12,
+                "ms": 4019.49,
+                "rtf": 0.335,
+                "lagSec": -245.53,
+                "words": 19
+              },
+              {
+                "seconds": 12,
+                "ms": 3111.36,
+                "rtf": 0.259,
+                "lagSec": -254.42,
+                "words": 2
+              },
+              {
+                "seconds": 12,
+                "ms": 6814.36,
+                "rtf": 0.568,
+                "lagSec": -259.6,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 8457.55,
+                "rtf": 0.705,
+                "lagSec": -263.15,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 3388.63,
+                "rtf": 0.282,
+                "lagSec": -271.76,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 9759.2,
+                "rtf": 0.813,
+                "lagSec": -274,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 3500.76,
+                "rtf": 0.292,
+                "lagSec": -282.5,
+                "words": 0
+              },
+              {
+                "seconds": 1.38,
+                "ms": 8775.25,
+                "rtf": 6.35,
+                "lagSec": -275.11,
+                "words": 0
+              }
+            ]
+          }
+        },
+        {
+          "audio": "synthetic-meeting.wav",
+          "audioSeconds": 117.89,
+          "hasReference": true,
+          "whole": {
+            "processingMs": 15352,
+            "rtf": 0.13,
+            "peakRssBytes": 330625024,
+            "maxSampledRssBytes": 314605568,
+            "cpuCores": 0.98,
+            "rssSamples": 78,
+            "ui": {
+              "maxTickDelayMs": 2.8,
+              "ticks": 153
+            },
+            "completeness": {
+              "words": 309,
+              "segments": 41,
+              "wordsPerMinute": 157.26,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": {
+              "wer": 0.2682926829268293,
+              "substitutions": 65,
+              "insertions": 2,
+              "deletions": 21,
+              "referenceWords": 328,
+              "hypothesisWords": 309
+            },
+            "text": "Good morning everyone, this is the weekly project review for Monday the 14th on September Prevent to napriere, the pack, rattle, metri and myself Let us start with the built isometric package Prere, where do we stand? Thanks And on Friday evening we have issued 240 7 isometric out of 310 At a 79% complete, the remaining 63 sheet are in checking and we expect to close them by Thursday 24th. Good, the pack, what about the piping support Royings for the oiling unit? We have 112 welded supports and 48 welded support detailed. The client returned 11 comments on revision to Mostly about weld symbols and the cassette plate thickness We have resolved high on the 11th and the last two need to reply from the Stressed team. Please chase the Stressed team today and copy me on the mail Rattle the server for the new design tool, is it installed? Yes, the machine arrived on Wednesday, it has 16 gigabytes of memory and an 8 core processor. I have installed the modeling software and the license is valid until the 31st of March next year, metri Two admin points. First, the office will be closed on Friday, the second on October for the public holiday. Second, the quarter didn't voice for the management office must go out before the 15th, so please send the draft to me my Wednesday noted. I will also work the conference room for the client visit on the 20th at 10th or in the morning. One more item. The budget for the second half of the year is 4.2 million rupees, which is about 8% higher than the first half. We need to keep over time under 200 hours per month across the team and in other business. No, then we close at 952. Thank you all. Same time next week.",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3.1,
+                "text": "Good morning everyone, this is the weekly project review"
+              },
+              {
+                "start": 3.1,
+                "end": 5.5200000000000005,
+                "text": "for Monday the 14th on September"
+              },
+              {
+                "start": 5.5200000000000005,
+                "end": 10,
+                "text": "Prevent to napriere, the pack, rattle, metri and myself"
+              },
+              {
+                "start": 10,
+                "end": 13.280000000000001,
+                "text": "Let us start with the built isometric package"
+              },
+              {
+                "start": 13.280000000000001,
+                "end": 16.240000000000002,
+                "text": "Prere, where do we stand? Thanks"
+              },
+              {
+                "start": 16.240000000000002,
+                "end": 21.98,
+                "text": "And on Friday evening we have issued 240 7 isometric out of"
+              },
+              {
+                "start": 21.98,
+                "end": 22.88,
+                "text": "310"
+              },
+              {
+                "start": 22.88,
+                "end": 28.080000000000002,
+                "text": "At a 79% complete, the remaining 63 sheet are in checking"
+              },
+              {
+                "start": 28.080000000000002,
+                "end": 29.92,
+                "text": "and we expect to close them"
+              },
+              {
+                "start": 29.92,
+                "end": 34.4,
+                "text": "by Thursday 24th. Good, the pack, what about the piping"
+              },
+              {
+                "start": 34.4,
+                "end": 34.88,
+                "text": "support"
+              },
+              {
+                "start": 34.88,
+                "end": 39.78,
+                "text": "Royings for the oiling unit? We have 112 welded supports"
+              },
+              {
+                "start": 39.78,
+                "end": 41.68,
+                "text": "and 48 welded support"
+              },
+              {
+                "start": 41.68,
+                "end": 45.84,
+                "text": "detailed. The client returned 11 comments on revision to"
+              },
+              {
+                "start": 45.84,
+                "end": 49.6,
+                "text": "Mostly about weld symbols and the cassette plate thickness"
+              },
+              {
+                "start": 49.6,
+                "end": 52.72,
+                "text": "We have resolved high on the 11th and the last two need to"
+              },
+              {
+                "start": 52.72,
+                "end": 53.6,
+                "text": "reply from the"
+              },
+              {
+                "start": 53.6,
+                "end": 56.88,
+                "text": "Stressed team. Please chase the Stressed team today and"
+              },
+              {
+                "start": 56.88,
+                "end": 58.4,
+                "text": "copy me on the mail"
+              },
+              {
+                "start": 58.4,
+                "end": 62.4,
+                "text": "Rattle the server for the new design tool, is it installed?"
+              },
+              {
+                "start": 62.4,
+                "end": 66.56,
+                "text": "Yes, the machine arrived on Wednesday, it has 16 gigabytes"
+              },
+              {
+                "start": 66.56,
+                "end": 67.2,
+                "text": "of memory"
+              },
+              {
+                "start": 67.2,
+                "end": 70.48,
+                "text": "and an 8 core processor. I have installed the modeling"
+              },
+              {
+                "start": 70.48,
+                "end": 71.60000000000001,
+                "text": "software and the"
+              },
+              {
+                "start": 71.60000000000001,
+                "end": 76,
+                "text": "license is valid until the 31st of March next year, metri"
+              },
+              {
+                "start": 76,
+                "end": 79.60000000000001,
+                "text": "Two admin points. First, the office will be closed on"
+              },
+              {
+                "start": 79.60000000000001,
+                "end": 80,
+                "text": "Friday,"
+              },
+              {
+                "start": 80,
+                "end": 83.84,
+                "text": "the second on October for the public holiday. Second, the"
+              },
+              {
+                "start": 83.84,
+                "end": 84.24,
+                "text": "quarter"
+              },
+              {
+                "start": 84.24,
+                "end": 86.8,
+                "text": "didn't voice for the management office must go out before"
+              },
+              {
+                "start": 86.8,
+                "end": 88,
+                "text": "the 15th, so"
+              },
+              {
+                "start": 88,
+                "end": 92.24,
+                "text": "please send the draft to me my Wednesday noted. I will also"
+              },
+              {
+                "start": 92.24,
+                "end": 92.72,
+                "text": "work the"
+              },
+              {
+                "start": 92.72,
+                "end": 96.24000000000001,
+                "text": "conference room for the client visit on the 20th at 10th or"
+              },
+              {
+                "start": 96.24000000000001,
+                "end": 100.08,
+                "text": "in the morning. One more item. The budget for the second"
+              },
+              {
+                "start": 100.08,
+                "end": 104.4,
+                "text": "half of the year is 4.2 million rupees, which is about 8%"
+              },
+              {
+                "start": 104.4,
+                "end": 107.92,
+                "text": "higher than the first half. We need to keep over time under"
+              },
+              {
+                "start": 107.92,
+                "end": 109.12,
+                "text": "200 hours per"
+              },
+              {
+                "start": 109.12,
+                "end": 113.12,
+                "text": "month across the team and in other business. No, then we"
+              },
+              {
+                "start": 113.12,
+                "end": 115.12,
+                "text": "close at 952."
+              },
+              {
+                "start": 115.12,
+                "end": 119.36,
+                "text": "Thank you all. Same time next week."
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 10,
+            "processingMs": 39346.74,
+            "rtf": 0.334,
+            "latencyP50Ms": 3718.61,
+            "latencyP95Ms": 5803.89,
+            "latencyMaxMs": 5803.89,
+            "lagSec": -78.54,
+            "maxQueueLagSec": 0,
+            "peakRssBytes": 330625024,
+            "maxSampledRssBytes": 314781696,
+            "cpuCores": 0.99,
+            "ui": {
+              "maxTickDelayMs": 24.1,
+              "ticks": 391
+            },
+            "completeness": {
+              "words": 323,
+              "segments": 35,
+              "wordsPerMinute": 164.39,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": {
+              "wer": 0.32621951219512196,
+              "substitutions": 70,
+              "insertions": 16,
+              "deletions": 21,
+              "referenceWords": 328,
+              "hypothesisWords": 323
+            },
+            "text": "Good morning everyone, this is the weekly project review for Monday the 14th on September Prevent to napriere, deep back, rah-ho, metri-un myself Let us start with the real tiresome electric package, Priya, where do we stand? Thanks, and on Friday evening we have issued 200 and 47 ISO metrics out on 310, 170 to 9% complete. The remaining 63 sheet saw in checking and we expect to close them by Thursday 24th. Good. Deepak, welcome out to the piping support drawings for the deois. We have 100 and 12 welded supports and 48 mounted support details. The client returned 11 comments on revision to mostly about weld symbols and numbers. For the first time, we have a good set plate thickness. We have resolved the eye on the 11 and the last 2 need a reply from the stress team. Please chase the stress team today and copy me on the mail. Raul the server for the new design tool is installed. Yes, the machine arrived on Wednesday. It has 16 gigabytes of memory and an 8-core processor. I have installed the modeling software and the license. This is valid until 31st of March next year. Metric 2 admin points. First, the office will be closed on Friday, Second October for the public holiday. Second, the war. Portaling in voice for the management office must go out before the 15th, so please send the draft to me my Wednesday noted. I will also work the conference room for the client visit on the 20th at 10th. 13 in the morning. One more item. The budget for the second half of the year is 4.2 million rupees, which is about 8% higher than the first half. We need to keep over time under 2. 100 hours per month across the team and the other business. No, then we close at 9.52. Thank you all. Same time next week.",
+            "perChunk": [
+              {
+                "seconds": 12,
+                "ms": 3681.03,
+                "rtf": 0.307,
+                "lagSec": -8.32,
+                "words": 32
+              },
+              {
+                "seconds": 12,
+                "ms": 3826.92,
+                "rtf": 0.319,
+                "lagSec": -16.49,
+                "words": 24
+              },
+              {
+                "seconds": 12,
+                "ms": 3294.41,
+                "rtf": 0.275,
+                "lagSec": -25.2,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 3602.67,
+                "rtf": 0.3,
+                "lagSec": -33.59,
+                "words": 26
+              },
+              {
+                "seconds": 12,
+                "ms": 3815.32,
+                "rtf": 0.318,
+                "lagSec": -41.78,
+                "words": 47
+              },
+              {
+                "seconds": 12,
+                "ms": 3895.03,
+                "rtf": 0.325,
+                "lagSec": -49.88,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 5803.89,
+                "rtf": 0.484,
+                "lagSec": -56.08,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 4083.86,
+                "rtf": 0.34,
+                "lagSec": -64,
+                "words": 39
+              },
+              {
+                "seconds": 12,
+                "ms": 3625,
+                "rtf": 0.302,
+                "lagSec": -72.37,
+                "words": 38
+              },
+              {
+                "seconds": 9.89,
+                "ms": 3718.61,
+                "rtf": 0.376,
+                "lagSec": -78.54,
+                "words": 25
+              }
+            ]
+          }
+        }
+      ],
+      "peakRssBytesLifetime": 330919936,
+      "idleRssBytesAfterLoad": 69775360,
+      "serverLogTail": [
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Caught signal 15, shutting down gracefully..."
+      ]
+    },
+    {
+      "modelId": "tiny.en-q5_1",
+      "modelFile": "ggml-tiny.en-q5_1.bin",
+      "modelSizeBytes": 32166155,
+      "verification": {
+        "verified": true,
+        "sha256": "c77c5766f1cef09b6b7d47f21b546cbddd4157886b3b5d6d4f709e91e66c7c2b",
+        "sizeBytes": 32166155
+      },
+      "threads": 2,
+      "loadMs": 111.88,
+      "cpuVariant": "sapphirerapids",
+      "pid": 9035,
+      "command": "/home/claude/minutes/resources/whisper/linux-x64/whisper-server -m /home/claude/models/ggml-tiny.en-q5_1.bin -t 2 --host 127.0.0.1 --port 45155 --no-gpu",
+      "files": [
+        {
+          "audio": "jfk.wav",
+          "audioSeconds": 11,
+          "hasReference": true,
+          "whole": {
+            "processingMs": 2018.85,
+            "rtf": 0.184,
+            "peakRssBytes": 109998080,
+            "maxSampledRssBytes": 109998080,
+            "cpuCores": 1.92,
+            "rssSamples": 11,
+            "ui": {
+              "maxTickDelayMs": 3.9,
+              "ticks": 20
+            },
+            "completeness": {
+              "words": 22,
+              "segments": 3,
+              "wordsPerMinute": 120,
+              "segmentCoverage": 0.962,
+              "lastSegmentEndCoverage": 0.962
+            },
+            "wer": {
+              "wer": 0,
+              "substitutions": 0,
+              "insertions": 0,
+              "deletions": 0,
+              "referenceWords": 22,
+              "hypothesisWords": 22
+            },
+            "text": "And so my fellow Americans ask not what your country can do for you ask what you can do for your country.",
+            "segments": [
+              {
+                "start": 0,
+                "end": 6.88,
+                "text": "And so my fellow Americans ask not what your country can do"
+              },
+              {
+                "start": 6.88,
+                "end": 7.74,
+                "text": "for you"
+              },
+              {
+                "start": 7.74,
+                "end": 10.58,
+                "text": "ask what you can do for your country."
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 1,
+            "processingMs": 2285.97,
+            "rtf": 0.208,
+            "latencyP50Ms": 2285.97,
+            "latencyP95Ms": 2285.97,
+            "latencyMaxMs": 2285.97,
+            "lagSec": -8.71,
+            "maxQueueLagSec": 0,
+            "peakRssBytes": 112926720,
+            "maxSampledRssBytes": 112926720,
+            "cpuCores": 1.86,
+            "ui": {
+              "maxTickDelayMs": 2.5,
+              "ticks": 22
+            },
+            "completeness": {
+              "words": 22,
+              "segments": 3,
+              "wordsPerMinute": 120,
+              "segmentCoverage": 0.962,
+              "lastSegmentEndCoverage": 0.962
+            },
+            "wer": {
+              "wer": 0,
+              "substitutions": 0,
+              "insertions": 0,
+              "deletions": 0,
+              "referenceWords": 22,
+              "hypothesisWords": 22
+            },
+            "text": "And so my fellow Americans ask not what your country can do for you ask what you can do for your country.",
+            "perChunk": [
+              {
+                "seconds": 11,
+                "ms": 2285.97,
+                "rtf": 0.208,
+                "lagSec": -8.71,
+                "words": 22
+              }
+            ]
+          }
+        },
+        {
+          "audio": "sample-16k.wav",
+          "audioSeconds": 20.13,
+          "hasReference": false,
+          "whole": {
+            "processingMs": 2450.36,
+            "rtf": 0.122,
+            "peakRssBytes": 119488512,
+            "maxSampledRssBytes": 116596736,
+            "cpuCores": 1.77,
+            "rssSamples": 13,
+            "ui": {
+              "maxTickDelayMs": 5.3,
+              "ticks": 24
+            },
+            "completeness": {
+              "words": 57,
+              "segments": 8,
+              "wordsPerMinute": 169.87,
+              "segmentCoverage": 0.932,
+              "lastSegmentEndCoverage": 0.932
+            },
+            "wer": null,
+            "text": "Alice was beginning to get very tired of sitting by her sister on the bank and of having nothing to do. Once or twice she had peeped into the book her sister was reading but it had no pictures or conversations in it and what is the use of a book called Alice without pictures or conversations.",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4.76,
+                "text": "Alice was beginning to get very tired of sitting by her"
+              },
+              {
+                "start": 4.76,
+                "end": 7.24,
+                "text": "sister on the bank and of having"
+              },
+              {
+                "start": 7.24,
+                "end": 8.64,
+                "text": "nothing to do."
+              },
+              {
+                "start": 8.64,
+                "end": 11.51,
+                "text": "Once or twice she had peeped into the book her sister was"
+              },
+              {
+                "start": 11.51,
+                "end": 13.16,
+                "text": "reading but it had no pictures"
+              },
+              {
+                "start": 13.16,
+                "end": 16.29,
+                "text": "or conversations in it and what is the use of a book called"
+              },
+              {
+                "start": 16.29,
+                "end": 17.92,
+                "text": "Alice without pictures or"
+              },
+              {
+                "start": 17.92,
+                "end": 18.76,
+                "text": "conversations."
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 2,
+            "processingMs": 4510.79,
+            "rtf": 0.224,
+            "latencyP50Ms": 2122.83,
+            "latencyP95Ms": 2387.96,
+            "latencyMaxMs": 2387.96,
+            "lagSec": -15.62,
+            "maxQueueLagSec": 0,
+            "peakRssBytes": 134676480,
+            "maxSampledRssBytes": 134676480,
+            "cpuCores": 1.82,
+            "ui": {
+              "maxTickDelayMs": 4.9,
+              "ticks": 44
+            },
+            "completeness": {
+              "words": 57,
+              "segments": 8,
+              "wordsPerMinute": 169.87,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": null,
+            "text": "Alice was beginning to get very tired of sitting by her sister on the bank and of having nothing to do. Once or twice she had peeped into the book her sister was reading. But it had no pictures or conversations in it and what is the use of a book thought Alice without pictures or conversations.",
+            "perChunk": [
+              {
+                "seconds": 12,
+                "ms": 2387.96,
+                "rtf": 0.199,
+                "lagSec": -9.61,
+                "words": 34
+              },
+              {
+                "seconds": 8.13,
+                "ms": 2122.83,
+                "rtf": 0.261,
+                "lagSec": -15.62,
+                "words": 23
+              }
+            ]
+          }
+        },
+        {
+          "audio": "long_en.wav",
+          "audioSeconds": 445.38,
+          "hasReference": false,
+          "whole": {
+            "processingMs": 33278.59,
+            "rtf": 0.075,
+            "peakRssBytes": 319963136,
+            "maxSampledRssBytes": 319963136,
+            "cpuCores": 1.69,
+            "rssSamples": 167,
+            "ui": {
+              "maxTickDelayMs": 10.6,
+              "ticks": 331
+            },
+            "completeness": {
+              "words": 949,
+              "segments": 116,
+              "wordsPerMinute": 127.85,
+              "segmentCoverage": 0.834,
+              "lastSegmentEndCoverage": 0.955
+            },
+            "wer": null,
+            "text": "♪♪ ♪♪ Oh, this sauce! I'm Jake and thank you for visiting because I have been stuck in this chair for weeks! Why you ask? Let me tell you, it's because of this! And what is that? Well, my dear friend, as you may know, I have cancer to try and stop it from spreading their mughal out of flesh, muscle tissue and bone, and replaced it with something else . And that got me thinking about what makes you, you, which then turned out me thinking about paradoxes, specifically logical paradoxes or thought experiments. You know, there is one in particular that pertains to the removal and replacement of certain things. Let's go outside. Quick little side note, I also figured out teleportation, but we'll discuss that later. You know, you should come out here too. So we can discuss the ship of Theseus. The ship of Theseus is fairly straightforward as far as logical paradoxes go. Let's say we have a ship, and it's a very nice ship. But after a while, we end up replacing all the wood, and then a while later, we replace the sails, then a while later we replace all the hooks. Is it still the same ship? Or is it a new ship? A different ship. Let's go a step further. Let's say we kept all the pieces we replaced and used them to make another ship, an identical one. Is this one the original? Or is this one the original? Or are they both not original? What makes something truly original? I need some sand. Here we have what I would consider a heap of sand, which leads us into our next logical paradox, the Sarite's paradox. Sarite is an ancient Greek, meaning heap. So here we have our heap, right? But what happens if we take away a grain of sand? Well, it's still a heap, but then we take away another grain of sand. Still a heap, but then we take another, and another, until we get this. Is this a heap? What about this? Or this? If we remove a grain until only one is left, is this still a heap? At what point do we no longer consider it? A heap. Let's reverse it. We start with a single grain of sand. Obviously not what we would call a heap, but then we add a grain, and another, and another. When does it become a heap of sand? You know, instead of using objects as our examples, let's discuss a paradox that instead uses words. We interact with words every day, but today we're going to focus on just two words, ont ological and heterological. These are essential for the grilling Nelson paradox. An ontological word is a word that describes itself. For example, pronounceable is pronounceable. Polysylabic is polysylabic, and a noun is a noun. Then there is heterological, where a word does not describe itself. For example, purple is not purple. Triangle is not a triangle, and hyphenated is not hyphen ated. The paradox comes into play when we ask the question, is the word heterological, heterological? If you say no, then heterological does not describe itself. And if it's not heterological, then it must be ontological and describe itself. But if it is ontological, then heterological describes itself, and therefore heterological is heterological paradox. If you say yes, heterological does not describe itself, then that means heterological is not heterological paradox. Let's try something. Let's combine aspects of the ship of Thesis and the Srydys paradox and apply it to ourselves. Even though part of my leg was replaced, I am still me. My entire leg were removed, I would still be me. So what point do I no longer myself? How much would have to be removed for you to no longer be you? Or is what makes us us our memories of who we are and of who we were? For example, you are different than when you were a baby. Obviously, you're taller, a little bit heavier, you have different hair, different teeth, and all of your cells have been replaced since birth. I mean, your personality has changed, your opinions have changed. So how are you the same person? You know, maybe we should lay off the teleportation for a little bit, not just because of that, but also because I've been thinking of something, the tele transportation paradox. Let's say we have a machine that can teleport you from here to there. In order to transmit you though, the machine kills you and instantly breaks you down to all the atoms that once made you up. It then transmits all the data of what you were to another machine in a different location which remakes you, putting different atoms in the right spot. So the question is, is the person who went into the machine the same person coming out of the other machine. You have the same memories, the same thoughts, but everything that physically makes you is different. You'd remember everything up to being teleported and reemer ging on the other side. Everything in between would be lost. So is it your identity , your emotions, feelings, and is it your thoughts that make you you? You know, you should come a little bit closer. When you wake up in the morning, how do you know you're the same person as who went to sleep? How do I know that when I close my eyes, it's the same Jake opening them? Maybe every time we open our eyes, we're being created again from the idea of who we are, from our sense of identity and as always, thanks for watching. ♪ ♪ ♪ ♪ ♪",
+            "segments": [
+              {
+                "start": 0,
+                "end": 12.96,
+                "text": "♪♪"
+              },
+              {
+                "start": 12.96,
+                "end": 20.64,
+                "text": "♪♪"
+              },
+              {
+                "start": 20.64,
+                "end": 24,
+                "text": "Oh, this sauce! I'm Jake and thank you for visiting because"
+              },
+              {
+                "start": 24,
+                "end": 27.28,
+                "text": "I have been stuck in this chair for weeks!"
+              },
+              {
+                "start": 27.28,
+                "end": 31.76,
+                "text": "Why you ask? Let me tell you, it's because of this! And"
+              },
+              {
+                "start": 31.76,
+                "end": 33.6,
+                "text": "what is that? Well, my dear friend,"
+              },
+              {
+                "start": 33.6,
+                "end": 36.800000000000004,
+                "text": "as you may know, I have cancer to try and stop it from"
+              },
+              {
+                "start": 36.800000000000004,
+                "end": 38.72,
+                "text": "spreading their mughal out of flesh,"
+              },
+              {
+                "start": 38.72,
+                "end": 42.53,
+                "text": "muscle tissue and bone, and replaced it with something else"
+              },
+              {
+                "start": 42.53,
+                "end": 45.12,
+                "text": ". And that got me thinking about what"
+              },
+              {
+                "start": 45.12,
+                "end": 48.53,
+                "text": "makes you, you, which then turned out me thinking about"
+              },
+              {
+                "start": 48.53,
+                "end": 51.44,
+                "text": "paradoxes, specifically logical paradoxes"
+              },
+              {
+                "start": 51.44,
+                "end": 54.63,
+                "text": "or thought experiments. You know, there is one in"
+              },
+              {
+                "start": 54.63,
+                "end": 56.88,
+                "text": "particular that pertains to the removal"
+              },
+              {
+                "start": 56.88,
+                "end": 62.230000000000004,
+                "text": "and replacement of certain things. Let's go outside. Quick"
+              },
+              {
+                "start": 62.230000000000004,
+                "end": 64.48,
+                "text": "little side note, I also figured"
+              },
+              {
+                "start": 64.48,
+                "end": 67.76,
+                "text": "out teleportation, but we'll discuss that later. You know,"
+              },
+              {
+                "start": 67.76,
+                "end": 69.36,
+                "text": "you should come out here too."
+              },
+              {
+                "start": 70.08,
+                "end": 72.8,
+                "text": "So we can discuss the ship of Theseus."
+              },
+              {
+                "start": 76,
+                "end": 78.96000000000001,
+                "text": "The ship of Theseus is fairly straightforward as far as"
+              },
+              {
+                "start": 78.96000000000001,
+                "end": 80.56,
+                "text": "logical paradoxes go."
+              },
+              {
+                "start": 80.56,
+                "end": 83.75,
+                "text": "Let's say we have a ship, and it's a very nice ship. But"
+              },
+              {
+                "start": 83.75,
+                "end": 85.28,
+                "text": "after a while, we end up replacing all the"
+              },
+              {
+                "start": 85.28,
+                "end": 87.78,
+                "text": "wood, and then a while later, we replace the sails, then a"
+              },
+              {
+                "start": 87.78,
+                "end": 89.84,
+                "text": "while later we replace all the hooks."
+              },
+              {
+                "start": 89.84,
+                "end": 93.29,
+                "text": "Is it still the same ship? Or is it a new ship? A different"
+              },
+              {
+                "start": 93.29,
+                "end": 94.88,
+                "text": "ship. Let's go a step further."
+              },
+              {
+                "start": 94.88,
+                "end": 97.82000000000001,
+                "text": "Let's say we kept all the pieces we replaced and used them"
+              },
+              {
+                "start": 97.82000000000001,
+                "end": 100.48,
+                "text": "to make another ship, an identical one."
+              },
+              {
+                "start": 100.48,
+                "end": 103.21000000000001,
+                "text": "Is this one the original? Or is this one the original? Or"
+              },
+              {
+                "start": 103.21000000000001,
+                "end": 105.60000000000001,
+                "text": "are they both not original?"
+              },
+              {
+                "start": 105.60000000000001,
+                "end": 110.65,
+                "text": "What makes something truly original? I need some sand. Here"
+              },
+              {
+                "start": 110.65,
+                "end": 113.28,
+                "text": "we have what I would consider"
+              },
+              {
+                "start": 113.28,
+                "end": 117.34,
+                "text": "a heap of sand, which leads us into our next logical"
+              },
+              {
+                "start": 117.34,
+                "end": 119.76,
+                "text": "paradox, the Sarite's paradox."
+              },
+              {
+                "start": 120.8,
+                "end": 124.42,
+                "text": "Sarite is an ancient Greek, meaning heap. So here we have"
+              },
+              {
+                "start": 124.42,
+                "end": 126.64,
+                "text": "our heap, right? But what happens"
+              },
+              {
+                "start": 126.64,
+                "end": 130.64000000000001,
+                "text": "if we take away a grain of sand? Well, it's still a heap,"
+              },
+              {
+                "start": 130.64000000000001,
+                "end": 132.96,
+                "text": "but then we take away another grain"
+              },
+              {
+                "start": 132.96,
+                "end": 136.29,
+                "text": "of sand. Still a heap, but then we take another, and"
+              },
+              {
+                "start": 136.29,
+                "end": 139.92000000000002,
+                "text": "another, until we get this. Is this a heap?"
+              },
+              {
+                "start": 139.92000000000002,
+                "end": 144.14000000000001,
+                "text": "What about this? Or this? If we remove a grain until only"
+              },
+              {
+                "start": 144.14000000000001,
+                "end": 146.8,
+                "text": "one is left, is this still a heap?"
+              },
+              {
+                "start": 146.8,
+                "end": 150.17000000000002,
+                "text": "At what point do we no longer consider it? A heap. Let's"
+              },
+              {
+                "start": 150.17000000000002,
+                "end": 151.92000000000002,
+                "text": "reverse it. We start with a single"
+              },
+              {
+                "start": 151.92000000000002,
+                "end": 154.83,
+                "text": "grain of sand. Obviously not what we would call a heap, but"
+              },
+              {
+                "start": 154.83,
+                "end": 156.64000000000001,
+                "text": "then we add a grain, and another,"
+              },
+              {
+                "start": 156.64000000000001,
+                "end": 160.79,
+                "text": "and another. When does it become a heap of sand? You know,"
+              },
+              {
+                "start": 160.79,
+                "end": 162.72,
+                "text": "instead of using objects as our"
+              },
+              {
+                "start": 162.72,
+                "end": 168.07,
+                "text": "examples, let's discuss a paradox that instead uses words."
+              },
+              {
+                "start": 168.07,
+                "end": 170.8,
+                "text": "We interact with words every day,"
+              },
+              {
+                "start": 170.8,
+                "end": 173.99,
+                "text": "but today we're going to focus on just two words, ont"
+              },
+              {
+                "start": 173.99,
+                "end": 177.04,
+                "text": "ological and heterological. These are essential"
+              },
+              {
+                "start": 177.04,
+                "end": 182.27,
+                "text": "for the grilling Nelson paradox. An ontological word is a"
+              },
+              {
+                "start": 182.27,
+                "end": 187.20000000000002,
+                "text": "word that describes itself. For example,"
+              },
+              {
+                "start": 187.20000000000002,
+                "end": 192.13,
+                "text": "pronounceable is pronounceable. Polysylabic is polysylabic,"
+              },
+              {
+                "start": 192.13,
+                "end": 195.44,
+                "text": "and a noun is a noun. Then there is"
+              },
+              {
+                "start": 195.44,
+                "end": 199.17000000000002,
+                "text": "heterological, where a word does not describe itself. For"
+              },
+              {
+                "start": 199.17000000000002,
+                "end": 201.36,
+                "text": "example, purple is not purple."
+              },
+              {
+                "start": 201.36,
+                "end": 204.72,
+                "text": "Triangle is not a triangle, and hyphenated is not hyphen"
+              },
+              {
+                "start": 204.72,
+                "end": 208.72,
+                "text": "ated. The paradox comes into play when we"
+              },
+              {
+                "start": 208.72,
+                "end": 213.38,
+                "text": "ask the question, is the word heterological, heterological?"
+              },
+              {
+                "start": 213.38,
+                "end": 215.52,
+                "text": "If you say no, then heterological"
+              },
+              {
+                "start": 215.52,
+                "end": 218.07,
+                "text": "does not describe itself. And if it's not heterological,"
+              },
+              {
+                "start": 218.07,
+                "end": 220,
+                "text": "then it must be ontological and describe"
+              },
+              {
+                "start": 220,
+                "end": 222.63,
+                "text": "itself. But if it is ontological, then heterological"
+              },
+              {
+                "start": 222.63,
+                "end": 225.76,
+                "text": "describes itself, and therefore heterological is"
+              },
+              {
+                "start": 225.76,
+                "end": 230,
+                "text": "heterological paradox. If you say yes, heterological does"
+              },
+              {
+                "start": 230,
+                "end": 232.24,
+                "text": "not describe itself, then that means"
+              },
+              {
+                "start": 232.24,
+                "end": 236.37,
+                "text": "heterological is not heterological paradox. Let's try"
+              },
+              {
+                "start": 236.37,
+                "end": 238.64000000000001,
+                "text": "something. Let's combine aspects of the"
+              },
+              {
+                "start": 238.64000000000001,
+                "end": 241.66,
+                "text": "ship of Thesis and the Srydys paradox and apply it to"
+              },
+              {
+                "start": 241.66,
+                "end": 244.16,
+                "text": "ourselves. Even though part of my leg was"
+              },
+              {
+                "start": 244.16,
+                "end": 248.16,
+                "text": "replaced, I am still me. My entire leg were removed, I"
+              },
+              {
+                "start": 248.16,
+                "end": 250.48000000000002,
+                "text": "would still be me. So what point do"
+              },
+              {
+                "start": 250.48000000000002,
+                "end": 255.03,
+                "text": "I no longer myself? How much would have to be removed for"
+              },
+              {
+                "start": 255.03,
+                "end": 257.52,
+                "text": "you to no longer be you? Or is what"
+              },
+              {
+                "start": 257.52,
+                "end": 261.6,
+                "text": "makes us us our memories of who we are and of who we were?"
+              },
+              {
+                "start": 261.6,
+                "end": 263.44,
+                "text": "For example, you are different than"
+              },
+              {
+                "start": 263.44,
+                "end": 265.84000000000003,
+                "text": "when you were a baby. Obviously, you're taller, a little"
+              },
+              {
+                "start": 265.84000000000003,
+                "end": 267.84000000000003,
+                "text": "bit heavier, you have different hair,"
+              },
+              {
+                "start": 267.84000000000003,
+                "end": 270.44,
+                "text": "different teeth, and all of your cells have been replaced"
+              },
+              {
+                "start": 270.44,
+                "end": 273.44,
+                "text": "since birth. I mean, your personality"
+              },
+              {
+                "start": 273.44,
+                "end": 277.65000000000003,
+                "text": "has changed, your opinions have changed. So how are you the"
+              },
+              {
+                "start": 277.65000000000003,
+                "end": 278.8,
+                "text": "same person?"
+              },
+              {
+                "start": 286.96,
+                "end": 291.06,
+                "text": "You know, maybe we should lay off the teleportation for a"
+              },
+              {
+                "start": 291.06,
+                "end": 292.40000000000003,
+                "text": "little bit, not just because of that,"
+              },
+              {
+                "start": 292.40000000000003,
+                "end": 295.40000000000003,
+                "text": "but also because I've been thinking of something, the tele"
+              },
+              {
+                "start": 295.40000000000003,
+                "end": 296.88,
+                "text": "transportation paradox."
+              },
+              {
+                "start": 298.32,
+                "end": 301.04,
+                "text": "Let's say we have a machine that can teleport you from here"
+              },
+              {
+                "start": 301.04,
+                "end": 303.28000000000003,
+                "text": "to there. In order to transmit"
+              },
+              {
+                "start": 303.28000000000003,
+                "end": 306.11,
+                "text": "you though, the machine kills you and instantly breaks you"
+              },
+              {
+                "start": 306.11,
+                "end": 307.92,
+                "text": "down to all the atoms that once made you"
+              },
+              {
+                "start": 307.92,
+                "end": 310.48,
+                "text": "up. It then transmits all the data of what you were to"
+              },
+              {
+                "start": 310.48,
+                "end": 313.04,
+                "text": "another machine in a different location"
+              },
+              {
+                "start": 313.04,
+                "end": 316.27,
+                "text": "which remakes you, putting different atoms in the right"
+              },
+              {
+                "start": 316.27,
+                "end": 319.6,
+                "text": "spot. So the question is,"
+              },
+              {
+                "start": 319.6,
+                "end": 322.55,
+                "text": "is the person who went into the machine the same person"
+              },
+              {
+                "start": 322.55,
+                "end": 324.8,
+                "text": "coming out of the other machine. You have"
+              },
+              {
+                "start": 324.8,
+                "end": 327.71,
+                "text": "the same memories, the same thoughts, but everything that"
+              },
+              {
+                "start": 327.71,
+                "end": 330.8,
+                "text": "physically makes you is different."
+              },
+              {
+                "start": 330.8,
+                "end": 333.11,
+                "text": "You'd remember everything up to being teleported and reemer"
+              },
+              {
+                "start": 333.11,
+                "end": 334,
+                "text": "ging on the other side."
+              },
+              {
+                "start": 334.8,
+                "end": 339.15000000000003,
+                "text": "Everything in between would be lost. So is it your identity"
+              },
+              {
+                "start": 339.15000000000003,
+                "end": 341.12,
+                "text": ", your emotions, feelings,"
+              },
+              {
+                "start": 341.12,
+                "end": 345.56,
+                "text": "and is it your thoughts that make you you? You know, you"
+              },
+              {
+                "start": 345.56,
+                "end": 347.6,
+                "text": "should come a little bit closer."
+              },
+              {
+                "start": 347.6,
+                "end": 350.2,
+                "text": "When you wake up in the morning, how do you know you're the"
+              },
+              {
+                "start": 350.2,
+                "end": 352.08,
+                "text": "same person as who went to sleep?"
+              },
+              {
+                "start": 352.08,
+                "end": 355.61,
+                "text": "How do I know that when I close my eyes, it's the same Jake"
+              },
+              {
+                "start": 355.61,
+                "end": 358.56,
+                "text": "opening them? Maybe every time we"
+              },
+              {
+                "start": 358.56,
+                "end": 362.2,
+                "text": "open our eyes, we're being created again from the idea of"
+              },
+              {
+                "start": 362.2,
+                "end": 365.04,
+                "text": "who we are, from our sense of identity"
+              },
+              {
+                "start": 366.8,
+                "end": 374.48,
+                "text": "and as always, thanks for watching."
+              },
+              {
+                "start": 388.56,
+                "end": 395.56,
+                "text": "♪ ♪ ♪"
+              },
+              {
+                "start": 418.56,
+                "end": 425.56,
+                "text": "♪ ♪"
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 38,
+            "processingMs": 99276.66,
+            "rtf": 0.223,
+            "latencyP50Ms": 2170.22,
+            "latencyP95Ms": 6448.68,
+            "latencyMaxMs": 6777.87,
+            "lagSec": -346.11,
+            "maxQueueLagSec": 5.07,
+            "peakRssBytes": 319963136,
+            "maxSampledRssBytes": 319963136,
+            "cpuCores": 1.73,
+            "ui": {
+              "maxTickDelayMs": 21,
+              "ticks": 987
+            },
+            "completeness": {
+              "words": 963,
+              "segments": 110,
+              "wordsPerMinute": 129.73,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": null,
+            "text": "♪♪ Oh! This sauce! I'm Jake, and thank you for visiting because I'm not sure. Because I have been stuck in this chair for weeks! Why you ask? Let me tell you, it's because of this! And what is that? Well, my dear friend, as you may know, I have cancer. To try and stop it from spreading, there moved a lot of flesh, muscle tissue and bone, and replaced it with something else. And that got me thinking about what makes you you, which that in turn got me. And thinking about paradoxes, specifically logical paradox es are thought experiments. You know, there is one in particular that pertains to the removal and replacement of certain things. Let's go outside. Quick little side note, I also figured out teleportation, but we'll discuss that later. You know, you should come out here too. So we can discuss the ship of Theseus. The ship of Theseus is fairly straightforward as far as logical paradoxes go. Let's say we have a ship, and it's a very nice ship, but I've got to say, I'm not sure why we ended up replacing all the wood , and then a while later, replace the sails, then a while later replace all the hooks . Is it still the same ship, or is it a new ship? A different ship. Let's go is depth further. Let's say we kept all the people. This is where we replaced and used them to make another ship, an identical one. Is this one the original? Or is this one the original? Or are they both not original? What makes something truly a original? I need some sand. Here we have what I would consider a heap of sand, which leads us into our next logical paradox, the Saratys Paradox. Sarities in Ancient Greek meaning heap. So here we have our heap, right? But what happens if we take away a grain of sand? Well, still a heap, but then we take away another grain of sand. Still a heap, but then we take another and another until we get this. Is this a heap? What about this? Or this? If we remove a grain until only one is left, is this still a heap? At what point do we no longer consider it? A heap? Let's reverse it. We start with a single grain of sand. Obviously not what we would call a heap, but then we add a grain. And another. And another. When does it become a heap of sand? You know instead of using objects as our examples, let's discuss a paradox that instead uses words. We interact with words every day, but today we're going to focus on just two words, audiological and heterological. These are essential for the grilling Nelson paradox. An ontological word is a word that describes itself. For example, pronounceable is pronounceable. Polysyllabic is polysyllabic. And the noun is a noun. Then there is heterological, where a word does not describe itself. For example, purple is not purple. Triangle is not a triangle and hyphenated is not hyphenated. The paradox comes into play when we ask the question is the word heterological, heterological. If you say no, then heterological does not describe itself. And if it's not heterological, then it must be ontological and describe itself. But if it is ont ological, then heterological describes itself. And therefore , heterological is heterological paradox. If you say yes, heterological does not describe itself, then that means heterological is not heterological paradox. Let's try something. Let's combine aspects of the ship of Thesisus and the Stridey's paradox and apply it to ourselves. Even though part of my leg was replaced, I am still me. Right? My entire leg were removed, I would still be me. So what point do I no longer my self? How much would have to be removed for you to no longer be you? Where's what makes us us our memories of who we are and of who we were? For example you are different than when you were a baby? Obviously you're taller, a little bit heavier, you have different hair, different teeth, and all your cells have been replaced since birth. I mean your personality has changed your opinions have changed. So how are you the same person? You know... Maybe we should lay off the teleportation for a little bit, not just because of that, but also because I've been thinking of something. The teletransportation paradox. Let 's say we have a machine that can teleport you from here to there. In order to transmit you though the machine kills you and instantly breaks you down to all the atoms that once made you up. It then transmits all the data of what you were to another machine in a different location which remakes you, putting different atoms in the right spot. So the question is is the person who went into the machine the same person coming out of the other machine. You have the same memories, the same thoughts, but everything that physically makes you is different. You'd remember everything up to being teleported and reemerging on the other side. Everything in between would be lost. So is it your identity, your emotions, feelings, and is it your thoughts that make you you know you should come a little bit closer. When you wake up in the morning, how do you know you're the same person as who went to sleep? How do I know that when I close my eyes is the same Jake opening them? Maybe every time we open our eyes we're being created again from the idea of who we are, from our sense of identity and as always thanks for watching. Thank you. Thank you. ♪♪♪ ♪♪♪♪♪ ♪♪♪ ♪♪♪♪ ♪♪♪♪ ♪♪♪♪ ♪♪♪",
+            "perChunk": [
+              {
+                "seconds": 12,
+                "ms": 1848.03,
+                "rtf": 0.154,
+                "lagSec": -10.15,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 1908.02,
+                "rtf": 0.159,
+                "lagSec": -20.24,
+                "words": 14
+              },
+              {
+                "seconds": 12,
+                "ms": 2089.29,
+                "rtf": 0.174,
+                "lagSec": -30.15,
+                "words": 36
+              },
+              {
+                "seconds": 12,
+                "ms": 2242.76,
+                "rtf": 0.187,
+                "lagSec": -39.91,
+                "words": 39
+              },
+              {
+                "seconds": 12,
+                "ms": 2221.6,
+                "rtf": 0.185,
+                "lagSec": -49.69,
+                "words": 28
+              },
+              {
+                "seconds": 12,
+                "ms": 2984.72,
+                "rtf": 0.249,
+                "lagSec": -58.71,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 2723.25,
+                "rtf": 0.227,
+                "lagSec": -67.98,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 5426.3,
+                "rtf": 0.452,
+                "lagSec": -74.56,
+                "words": 56
+              },
+              {
+                "seconds": 12,
+                "ms": 5353.68,
+                "rtf": 0.446,
+                "lagSec": -81.2,
+                "words": 37
+              },
+              {
+                "seconds": 12,
+                "ms": 2187.09,
+                "rtf": 0.182,
+                "lagSec": -91.02,
+                "words": 27
+              },
+              {
+                "seconds": 12,
+                "ms": 2168.9,
+                "rtf": 0.181,
+                "lagSec": -100.85,
+                "words": 33
+              },
+              {
+                "seconds": 12,
+                "ms": 2154.24,
+                "rtf": 0.18,
+                "lagSec": -110.69,
+                "words": 34
+              },
+              {
+                "seconds": 12,
+                "ms": 2183.55,
+                "rtf": 0.182,
+                "lagSec": -120.51,
+                "words": 44
+              },
+              {
+                "seconds": 12,
+                "ms": 2128.84,
+                "rtf": 0.177,
+                "lagSec": -130.38,
+                "words": 29
+              },
+              {
+                "seconds": 12,
+                "ms": 2069.51,
+                "rtf": 0.172,
+                "lagSec": -140.31,
+                "words": 27
+              },
+              {
+                "seconds": 12,
+                "ms": 2192.6,
+                "rtf": 0.183,
+                "lagSec": -150.12,
+                "words": 17
+              },
+              {
+                "seconds": 12,
+                "ms": 2175.25,
+                "rtf": 0.181,
+                "lagSec": -159.94,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 2257.29,
+                "rtf": 0.188,
+                "lagSec": -169.69,
+                "words": 26
+              },
+              {
+                "seconds": 12,
+                "ms": 2139,
+                "rtf": 0.178,
+                "lagSec": -179.55,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 2370.19,
+                "rtf": 0.198,
+                "lagSec": -189.18,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 2358.49,
+                "rtf": 0.197,
+                "lagSec": -198.82,
+                "words": 38
+              },
+              {
+                "seconds": 12,
+                "ms": 2148.85,
+                "rtf": 0.179,
+                "lagSec": -208.67,
+                "words": 41
+              },
+              {
+                "seconds": 12,
+                "ms": 2125.74,
+                "rtf": 0.177,
+                "lagSec": -218.54,
+                "words": 33
+              },
+              {
+                "seconds": 12,
+                "ms": 1968.88,
+                "rtf": 0.164,
+                "lagSec": -228.57,
+                "words": 9
+              },
+              {
+                "seconds": 12,
+                "ms": 2246.1,
+                "rtf": 0.187,
+                "lagSec": -238.33,
+                "words": 37
+              },
+              {
+                "seconds": 12,
+                "ms": 2170.22,
+                "rtf": 0.181,
+                "lagSec": -248.16,
+                "words": 45
+              },
+              {
+                "seconds": 12,
+                "ms": 2214.46,
+                "rtf": 0.185,
+                "lagSec": -257.94,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 2077.77,
+                "rtf": 0.173,
+                "lagSec": -267.87,
+                "words": 33
+              },
+              {
+                "seconds": 12,
+                "ms": 2090.98,
+                "rtf": 0.174,
+                "lagSec": -277.77,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 2291.69,
+                "rtf": 0.191,
+                "lagSec": -287.48,
+                "words": 44
+              },
+              {
+                "seconds": 12,
+                "ms": 2137.63,
+                "rtf": 0.178,
+                "lagSec": -297.35,
+                "words": 19
+              },
+              {
+                "seconds": 12,
+                "ms": 2038.2,
+                "rtf": 0.17,
+                "lagSec": -307.31,
+                "words": 2
+              },
+              {
+                "seconds": 12,
+                "ms": 3526.16,
+                "rtf": 0.294,
+                "lagSec": -315.78,
+                "words": 2
+              },
+              {
+                "seconds": 12,
+                "ms": 1953.7,
+                "rtf": 0.163,
+                "lagSec": -325.83,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 1899.95,
+                "rtf": 0.158,
+                "lagSec": -335.93,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 1977.18,
+                "rtf": 0.165,
+                "lagSec": -345.95,
+                "words": 0
+              },
+              {
+                "seconds": 12,
+                "ms": 6777.87,
+                "rtf": 0.565,
+                "lagSec": -351.17,
+                "words": 0
+              },
+              {
+                "seconds": 1.38,
+                "ms": 6448.68,
+                "rtf": 4.666,
+                "lagSec": -346.11,
+                "words": 0
+              }
+            ]
+          }
+        },
+        {
+          "audio": "synthetic-meeting.wav",
+          "audioSeconds": 117.89,
+          "hasReference": true,
+          "whole": {
+            "processingMs": 9927.51,
+            "rtf": 0.084,
+            "peakRssBytes": 319766528,
+            "maxSampledRssBytes": 308641792,
+            "cpuCores": 1.69,
+            "rssSamples": 51,
+            "ui": {
+              "maxTickDelayMs": 4.7,
+              "ticks": 98
+            },
+            "completeness": {
+              "words": 309,
+              "segments": 41,
+              "wordsPerMinute": 157.26,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": {
+              "wer": 0.2682926829268293,
+              "substitutions": 65,
+              "insertions": 2,
+              "deletions": 21,
+              "referenceWords": 328,
+              "hypothesisWords": 309
+            },
+            "text": "Good morning everyone, this is the weekly project review for Monday the 14th on September Prevent to napriere, the pack, rattle, metri and myself Let us start with the built isometric package Prere, where do we stand? Thanks And on Friday evening we have issued 240 7 isometric out of 310 At a 79% complete, the remaining 63 sheet are in checking and we expect to close them by Thursday 24th. Good, the pack, what about the piping support Royings for the oiling unit? We have 112 welded supports and 48 welded support detailed. The client returned 11 comments on revision to Mostly about weld symbols and the cassette plate thickness We have resolved high on the 11th and the last two need to reply from the Stressed team. Please chase the Stressed team today and copy me on the mail Rattle the server for the new design tool, is it installed? Yes, the machine arrived on Wednesday, it has 16 gigabytes of memory and an 8 core processor. I have installed the modeling software and the license is valid until the 31st of March next year, metri Two admin points. First, the office will be closed on Friday, the second on October for the public holiday. Second, the quarter didn't voice for the management office must go out before the 15th, so please send the draft to me my Wednesday noted. I will also work the conference room for the client visit on the 20th at 10th or in the morning. One more item. The budget for the second half of the year is 4.2 million rupees, which is about 8% higher than the first half. We need to keep over time under 200 hours per month across the team and in other business. No, then we close at 952. Thank you all. Same time next week.",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3.1,
+                "text": "Good morning everyone, this is the weekly project review"
+              },
+              {
+                "start": 3.1,
+                "end": 5.5200000000000005,
+                "text": "for Monday the 14th on September"
+              },
+              {
+                "start": 5.5200000000000005,
+                "end": 10,
+                "text": "Prevent to napriere, the pack, rattle, metri and myself"
+              },
+              {
+                "start": 10,
+                "end": 13.280000000000001,
+                "text": "Let us start with the built isometric package"
+              },
+              {
+                "start": 13.280000000000001,
+                "end": 16.240000000000002,
+                "text": "Prere, where do we stand? Thanks"
+              },
+              {
+                "start": 16.240000000000002,
+                "end": 21.98,
+                "text": "And on Friday evening we have issued 240 7 isometric out of"
+              },
+              {
+                "start": 21.98,
+                "end": 22.88,
+                "text": "310"
+              },
+              {
+                "start": 22.88,
+                "end": 28.080000000000002,
+                "text": "At a 79% complete, the remaining 63 sheet are in checking"
+              },
+              {
+                "start": 28.080000000000002,
+                "end": 29.84,
+                "text": "and we expect to close them"
+              },
+              {
+                "start": 29.84,
+                "end": 34.4,
+                "text": "by Thursday 24th. Good, the pack, what about the piping"
+              },
+              {
+                "start": 34.4,
+                "end": 34.88,
+                "text": "support"
+              },
+              {
+                "start": 34.88,
+                "end": 39.78,
+                "text": "Royings for the oiling unit? We have 112 welded supports"
+              },
+              {
+                "start": 39.78,
+                "end": 41.68,
+                "text": "and 48 welded support"
+              },
+              {
+                "start": 41.68,
+                "end": 45.84,
+                "text": "detailed. The client returned 11 comments on revision to"
+              },
+              {
+                "start": 45.84,
+                "end": 49.6,
+                "text": "Mostly about weld symbols and the cassette plate thickness"
+              },
+              {
+                "start": 49.6,
+                "end": 52.72,
+                "text": "We have resolved high on the 11th and the last two need to"
+              },
+              {
+                "start": 52.72,
+                "end": 53.6,
+                "text": "reply from the"
+              },
+              {
+                "start": 53.6,
+                "end": 56.88,
+                "text": "Stressed team. Please chase the Stressed team today and"
+              },
+              {
+                "start": 56.88,
+                "end": 58.4,
+                "text": "copy me on the mail"
+              },
+              {
+                "start": 58.4,
+                "end": 62.4,
+                "text": "Rattle the server for the new design tool, is it installed?"
+              },
+              {
+                "start": 62.4,
+                "end": 66.56,
+                "text": "Yes, the machine arrived on Wednesday, it has 16 gigabytes"
+              },
+              {
+                "start": 66.56,
+                "end": 67.2,
+                "text": "of memory"
+              },
+              {
+                "start": 67.2,
+                "end": 70.61,
+                "text": "and an 8 core processor. I have installed the modeling"
+              },
+              {
+                "start": 70.61,
+                "end": 71.52,
+                "text": "software and the"
+              },
+              {
+                "start": 71.52,
+                "end": 76,
+                "text": "license is valid until the 31st of March next year, metri"
+              },
+              {
+                "start": 76,
+                "end": 79.60000000000001,
+                "text": "Two admin points. First, the office will be closed on"
+              },
+              {
+                "start": 79.60000000000001,
+                "end": 80,
+                "text": "Friday,"
+              },
+              {
+                "start": 80,
+                "end": 83.84,
+                "text": "the second on October for the public holiday. Second, the"
+              },
+              {
+                "start": 83.84,
+                "end": 84.24,
+                "text": "quarter"
+              },
+              {
+                "start": 84.24,
+                "end": 86.8,
+                "text": "didn't voice for the management office must go out before"
+              },
+              {
+                "start": 86.8,
+                "end": 88,
+                "text": "the 15th, so"
+              },
+              {
+                "start": 88,
+                "end": 92.24,
+                "text": "please send the draft to me my Wednesday noted. I will also"
+              },
+              {
+                "start": 92.24,
+                "end": 92.72,
+                "text": "work the"
+              },
+              {
+                "start": 92.72,
+                "end": 96.24000000000001,
+                "text": "conference room for the client visit on the 20th at 10th or"
+              },
+              {
+                "start": 96.24000000000001,
+                "end": 100.08,
+                "text": "in the morning. One more item. The budget for the second"
+              },
+              {
+                "start": 100.08,
+                "end": 104.4,
+                "text": "half of the year is 4.2 million rupees, which is about 8%"
+              },
+              {
+                "start": 104.4,
+                "end": 107.92,
+                "text": "higher than the first half. We need to keep over time under"
+              },
+              {
+                "start": 107.92,
+                "end": 109.12,
+                "text": "200 hours per"
+              },
+              {
+                "start": 109.12,
+                "end": 113.12,
+                "text": "month across the team and in other business. No, then we"
+              },
+              {
+                "start": 113.12,
+                "end": 115.12,
+                "text": "close at 952."
+              },
+              {
+                "start": 115.12,
+                "end": 119.36,
+                "text": "Thank you all. Same time next week."
+              }
+            ]
+          },
+          "live": {
+            "chunkMs": 12000,
+            "chunks": 10,
+            "processingMs": 25762.05,
+            "rtf": 0.219,
+            "latencyP50Ms": 2344.46,
+            "latencyP95Ms": 3846.74,
+            "latencyMaxMs": 3846.74,
+            "lagSec": -92.13,
+            "maxQueueLagSec": 0,
+            "peakRssBytes": 319766528,
+            "maxSampledRssBytes": 309579776,
+            "cpuCores": 1.78,
+            "ui": {
+              "maxTickDelayMs": 32.6,
+              "ticks": 255
+            },
+            "completeness": {
+              "words": 315,
+              "segments": 36,
+              "wordsPerMinute": 160.32,
+              "segmentCoverage": 1,
+              "lastSegmentEndCoverage": 1
+            },
+            "wer": {
+              "wer": 0.3048780487804878,
+              "substitutions": 69,
+              "insertions": 9,
+              "deletions": 22,
+              "referenceWords": 328,
+              "hypothesisWords": 315
+            },
+            "text": "Good morning everyone, this is the weekly project review for Monday the 14th on September Prevent to napriere, deep back, rah-ho, metri-un myself Let us start with the real tiresome electric package, Priya, where do we stand? Thanks, and on Friday evening we have issued 240 7 ISO metrics out on 310, 170 9% complete. The remaining 63 sheets are in checking and we expect to close them by Thursday 24th. Good. Deepak, welcome out to the piping support drawings for the deoill ers. We have 100 and 12 welded supports and 48 mounted support details. The client returned 11 comments on revision to mostly about weld symbols and notes. For a gossette plate thickness, we have resolved eye on the 11 and the last 2 need a reply from the stress team. Please chase the stress team today and copy me on the mail. Raul the server for the new design tool is installed. Yes, the machine arrived on Wednesday. It has 16 gigabytes of memory and an 8-core processor. I have installed the modeling software and the license. This is valid until 31st of March next year. Metric 2 admin points. First, the office will be closed on Friday, Second October for the public holiday. Second, the war. Portaling in voice for the management office must go out before the 15th, so please send the draft to me my Wednesday noted. I will also work the conference room for the client visit on the 20th at 10th. 13 in the morning. One more item. The budget for the second half of the year is 4.2 million rupees, which is about 8% higher than the first half. We need to keep over time under 2. 100 hours per month across the team and in other business, no. Then we close at 9.52. Thank you all. Same time next week.",
+            "perChunk": [
+              {
+                "seconds": 12,
+                "ms": 2651.01,
+                "rtf": 0.221,
+                "lagSec": -9.35,
+                "words": 32
+              },
+              {
+                "seconds": 12,
+                "ms": 2514.78,
+                "rtf": 0.21,
+                "lagSec": -18.83,
+                "words": 23
+              },
+              {
+                "seconds": 12,
+                "ms": 2344.46,
+                "rtf": 0.195,
+                "lagSec": -28.49,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 2326.29,
+                "rtf": 0.194,
+                "lagSec": -38.16,
+                "words": 26
+              },
+              {
+                "seconds": 12,
+                "ms": 3846.74,
+                "rtf": 0.321,
+                "lagSec": -46.32,
+                "words": 40
+              },
+              {
+                "seconds": 12,
+                "ms": 2246.58,
+                "rtf": 0.187,
+                "lagSec": -56.07,
+                "words": 31
+              },
+              {
+                "seconds": 12,
+                "ms": 3168.26,
+                "rtf": 0.264,
+                "lagSec": -64.9,
+                "words": 30
+              },
+              {
+                "seconds": 12,
+                "ms": 2345.64,
+                "rtf": 0.195,
+                "lagSec": -74.56,
+                "words": 39
+              },
+              {
+                "seconds": 12,
+                "ms": 2235.64,
+                "rtf": 0.186,
+                "lagSec": -84.32,
+                "words": 38
+              },
+              {
+                "seconds": 9.89,
+                "ms": 2082.65,
+                "rtf": 0.211,
+                "lagSec": -92.13,
+                "words": 25
+              }
+            ]
+          }
+        }
+      ],
+      "peakRssBytesLifetime": 319963136,
+      "idleRssBytesAfterLoad": 69849088,
+      "serverLogTail": [
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Received request: chunk.wav",
+        "Successfully loaded chunk.wav",
+        "Running whisper.cpp inference on chunk.wav",
+        "Caught signal 15, shutting down gracefully..."
+      ]
+    },
+    {
+      "modelId": "base.en-q5_1",
+      "skipped": "model file not found at /home/claude/models/ggml-base.en-q5_1.bin"
+    },
+    {
+      "modelId": "base-q5_1",
+      "skipped": "model file not found at /home/claude/models/ggml-base-q5_1.bin"
+    },
+    {
+      "modelId": "small.en-q5_1",
+      "skipped": "model file not found at /home/claude/models/ggml-small.en-q5_1.bin"
+    }
+  ],
+  "officialBench": [
+    {
+      "modelId": "tiny.en-q5_1",
+      "threads": 1,
+      "exitStatus": 0,
+      "loadMs": 59.62,
+      "encodeMs": 1500.96,
+      "decodeMs": 1102.58,
+      "batchdMs": 1125.45,
+      "promptMs": 11259.49,
+      "systemInfo": "n_threads = 1 / 2 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | OPENMP = 1 | REPACK = 1 |",
+      "raw": "load_backend: loaded CPU backend from /home/claude/minutes/resources/whisper/linux-x64/libggml-cpu-sapphirerapids.so\nsystem_info: n_threads = 1 / 2 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | OPENMP = 1 | REPACK = 1 | \nwhisper_print_timings:     load time =    59.62 ms\nwhisper_print_timings:      mel time =     0.00 ms\nwhisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)\nwhisper_print_timings:   encode time =  1500.96 ms /     1 runs (  1500.96 ms per run)\nwhisper_print_timings:   decode time =  1102.58 ms /   256 runs (     4.31 ms per run)\nwhisper_print_timings:   batchd time =  1125.45 ms /   320 runs (     3.52 ms per run)\nwhisper_print_timings:   prompt time = 11259.49 ms /  4096 runs (     2.75 ms per run)\nwhisper_print_timings:    total time = 14989.62 ms"
+    },
+    {
+      "modelId": "tiny.en-q5_1",
+      "threads": 2,
+      "exitStatus": 0,
+      "loadMs": 60.36,
+      "encodeMs": 1001.8,
+      "decodeMs": 853.39,
+      "batchdMs": 685.09,
+      "promptMs": 5893.82,
+      "systemInfo": "n_threads = 2 / 2 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | OPENMP = 1 | REPACK = 1 |",
+      "raw": "load_backend: loaded CPU backend from /home/claude/minutes/resources/whisper/linux-x64/libggml-cpu-sapphirerapids.so\nsystem_info: n_threads = 2 / 2 | WHISPER : COREML = 0 | OPENVINO = 0 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | AMX_INT8 = 1 | OPENMP = 1 | REPACK = 1 | \nwhisper_print_timings:     load time =    60.36 ms\nwhisper_print_timings:      mel time =     0.00 ms\nwhisper_print_timings:   sample time =     0.00 ms /     1 runs (     0.00 ms per run)\nwhisper_print_timings:   encode time =  1001.80 ms /     1 runs (  1001.80 ms per run)\nwhisper_print_timings:   decode time =   853.39 ms /   256 runs (     3.33 ms per run)\nwhisper_print_timings:   batchd time =   685.09 ms /   320 runs (     2.14 ms per run)\nwhisper_print_timings:   prompt time =  5893.82 ms /  4096 runs (     1.44 ms per run)\nwhisper_print_timings:    total time =  8435.27 ms"
+    }
+  ],
+  "finishedAt": "2026-10-20T12:43:08.279Z"
+}

@@ -1,0 +1,350 @@
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+.page {
+  max-width: var(--editor-max-w);
+  margin: 0 auto;
+  padding: 8px 48px 120px;
+}
+@media (max-width: 900px) {
+  .page {
+    padding: 8px 28px 120px;
+  }
+}
+
+.title {
+  width: 100%;
+  border: 0;
+  background: none;
+  resize: none;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  padding: 0;
+  margin: 18px 0 4px;
+  overflow: hidden;
+  user-select: text;
+  cursor: text;
+}
+.title::placeholder {
+  color: var(--fg-faint);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px 8px;
+  /* Pull the first item's hover padding out so its icon sits on the title's left edge. */
+  margin: 0 0 18px -6px;
+  font-size: var(--text-sm);
+  color: var(--fg-muted);
+  min-height: 24px;
+}
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: var(--radius-sm);
+  color: var(--fg-muted);
+  white-space: nowrap;
+  max-width: 320px;
+}
+.metaItem svg {
+  flex: none;
+  opacity: 0.8;
+}
+.metaItem span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button.metaItem:hover {
+  background: var(--bg-hover);
+  color: var(--fg-secondary);
+}
+.metaItem[data-placeholder='true'] {
+  color: var(--fg-faint);
+}
+.tag {
+  composes: metaItem;
+  gap: 2px;
+  padding: 0 5px;
+}
+/* Each item wraps as a unit. */
+.metaGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* ---------- ProseMirror content ---------- */
+.editor :global(.ProseMirror) {
+  outline: none;
+  font-size: var(--editor-font-size, 15px);
+  line-height: var(--leading-relaxed);
+  color: var(--fg);
+  user-select: text;
+  cursor: text;
+  min-height: 40vh;
+  caret-color: var(--fg);
+}
+.editor :global(.ProseMirror p) {
+  margin: 0 0 0.6em;
+}
+.editor :global(.ProseMirror h1),
+.editor :global(.ProseMirror h2),
+.editor :global(.ProseMirror h3) {
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.01em;
+  line-height: var(--leading-tight);
+  margin: 1.4em 0 0.4em;
+}
+.editor :global(.ProseMirror h1) {
+  font-size: 1.45em;
+}
+.editor :global(.ProseMirror h2) {
+  font-size: 1.22em;
+}
+.editor :global(.ProseMirror h3) {
+  font-size: 1.05em;
+}
+.editor :global(.ProseMirror > :first-child) {
+  margin-top: 0;
+}
+.editor :global(.ProseMirror ul),
+.editor :global(.ProseMirror ol) {
+  padding-left: 1.5em;
+  margin: 0 0 0.6em;
+}
+.editor :global(.ProseMirror li > p) {
+  margin: 0 0 0.2em;
+}
+.editor :global(.ProseMirror li) {
+  margin: 0.1em 0;
+}
+.editor :global(.ProseMirror ul[data-type='taskList']) {
+  list-style: none;
+  padding-left: 0.2em;
+}
+.editor :global(.ProseMirror ul[data-type='taskList'] li) {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.editor :global(.ProseMirror ul[data-type='taskList'] li > label) {
+  flex: none;
+  margin-top: 0.3em;
+  user-select: none;
+}
+.editor :global(.ProseMirror ul[data-type='taskList'] li > div) {
+  flex: 1;
+}
+.editor :global(.ProseMirror ul[data-type='taskList'] li > div > p) {
+  margin: 0 0 0.2em;
+}
+.editor :global(.ProseMirror ul[data-type='taskList'] li[data-checked='true'] > div) {
+  color: var(--fg-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--fg-faint);
+}
+.editor :global(.ProseMirror input[type='checkbox']) {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 4px;
+  background: var(--bg-elevated);
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+}
+.editor :global(.ProseMirror input[type='checkbox']:checked) {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.editor :global(.ProseMirror input[type='checkbox']:checked::after) {
+  content: '';
+  width: 8px;
+  height: 5px;
+  border: 2px solid var(--fg-on-accent);
+  border-top: 0;
+  border-right: 0;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+.editor :global(.ProseMirror blockquote) {
+  margin: 0.6em 0;
+  padding-left: 1em;
+  border-left: 2px solid var(--border-strong);
+  color: var(--fg-secondary);
+}
+.editor :global(.ProseMirror pre) {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-inset);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  margin: 0.6em 0;
+  overflow-x: auto;
+}
+.editor :global(.ProseMirror code) {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-inset);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+.editor :global(.ProseMirror pre code) {
+  background: none;
+  padding: 0;
+}
+.editor :global(.ProseMirror hr) {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.2em 0;
+}
+.editor :global(.ProseMirror a) {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent);
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+.editor :global(.ProseMirror p.is-editor-empty:first-child::before) {
+  content: attr(data-placeholder);
+  color: var(--fg-faint);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+.editor :global(.search-match) {
+  background: var(--bg-mark);
+  border-radius: 2px;
+}
+.editor :global(.search-match-current) {
+  background: rgba(214, 160, 48, 0.6);
+  outline: 1px solid var(--warning);
+}
+
+/* ---------- Find bar ---------- */
+.findBar {
+  position: absolute;
+  top: 46px;
+  right: 24px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  padding: 6px;
+  animation: popIn var(--dur-fast) var(--ease);
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.findBar input,
+.findBar input:focus {
+  width: 200px;
+  border-color: transparent;
+  background: var(--bg-inset);
+  box-shadow: none;
+}
+.findCount {
+  font-size: var(--text-xs);
+  color: var(--fg-muted);
+  min-width: 44px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Floating formatting hint ---------- */
+.formatBar {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 2px;
+  width: max-content;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  padding: 4px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+  pointer-events: none;
+}
+.formatBar[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.formatBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-secondary);
+}
+.formatBtn:hover {
+  background: var(--bg-hover);
+  color: var(--fg);
+}
+.formatBtn[data-active='true'] {
+  background: var(--bg-active);
+  color: var(--fg);
+}
+.formatSep {
+  width: 1px;
+  background: var(--border);
+  margin: 4px 2px;
+}
+
+/* ---------- First launch ---------- */
+.welcome {
+  flex: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 12vh 32px 0;
+  color: var(--fg-secondary);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  user-select: text;
+}
+.welcome h1 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 0 0 8px;
+}
+.welcome p {
+  margin: 0 0 16px;
+}
+.welcome ul {
+  margin: 0 0 24px;
+  padding-left: 18px;
+}
+.welcome li {
+  margin: 0 0 6px;
+}
+.welcome strong {
+  font-weight: var(--weight-medium);
+  color: var(--fg);
+}

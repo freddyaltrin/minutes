@@ -1,0 +1,41 @@
+import { _electron as electron } from '@playwright/test'
+import { mkdtempSync, readdirSync, statSync, readFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+const ud = mkdtempSync(join(tmpdir(), 'minutes-rec-'))
+const out = '/tmp/claude-0/-home-claude/f9b91c5f-5dd6-59d4-a2b2-069855a0b185/scratchpad/shots'
+const app = await electron.launch({ args: ['--no-sandbox', '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream', '.'], cwd: '/home/claude/minutes', env: { ...process.env, MINUTES_USER_DATA: ud } })
+const win = await app.firstWindow()
+win.on('pageerror', (e) => console.log('[pageerror]', e.message))
+win.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') console.log('[console]', m.type(), m.text().slice(0, 200)) })
+await win.waitForLoadState('domcontentloaded')
+await win.waitForTimeout(1200)
+await win.evaluate(() => window.minutes.settings.set({ audio: { keepRecordings: true, captureSystemAudio: false } }))
+await win.keyboard.press('Control+N')
+await win.waitForTimeout(300)
+await win.fill('textarea[aria-label="Note title"]', 'Recording pipeline test')
+await win.click('button:has-text("Record")')
+await win.waitForTimeout(3500)
+await win.screenshot({ path: join(out, '31-recording.png') })
+console.log('state:', JSON.stringify(await win.evaluate(() => window.minutes.recording.getState())))
+await win.click('.ProseMirror'); await win.keyboard.type('typing while recording works')
+await win.waitForTimeout(1500)
+await win.keyboard.press('Control+Shift+P')
+await win.waitForTimeout(800)
+await win.screenshot({ path: join(out, '32-paused.png') })
+await win.keyboard.press('Control+Shift+P')
+await win.waitForTimeout(1500)
+await win.keyboard.press('Control+T')
+await win.waitForTimeout(500)
+await win.screenshot({ path: join(out, '33-recording-transcript.png') })
+await win.click('button[aria-label="Stop recording"]').catch(async () => { await win.keyboard.press('Control+Shift+R') })
+await win.waitForTimeout(2500)
+await win.screenshot({ path: join(out, '34-stopped.png') })
+console.log('state after stop:', JSON.stringify(await win.evaluate(() => window.minutes.recording.getState())))
+const recDir = join(ud, 'recordings')
+for (const n of readdirSync(recDir)) for (const f of readdirSync(join(recDir, n))) {
+  const p = join(recDir, n, f); const b = readFileSync(p)
+  console.log('wav:', f, statSync(p).size, 'bytes; RIFF:', b.toString('ascii', 0, 4), 'rate:', b.readUInt32LE(24), 'bits:', b.readUInt16LE(34), 'data:', b.readUInt32LE(40))
+}
+await app.close()
+console.log(readFileSync(join(ud, 'logs/minutes.log'), 'utf8').split('\n').filter(l => /recording|error|warn/.test(l)).join('\n'))

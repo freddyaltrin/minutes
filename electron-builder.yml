@@ -1,0 +1,55 @@
+# Packaging configuration for Minutes. Build with `npm run dist:win` (works from Windows or Linux).
+appId: com.dexteritydesign.minutes
+productName: Minutes
+copyright: Copyright © 2026 Dexterity Design Services Pvt. Ltd.
+artifactName: ${productName}-Setup-${version}.${ext}
+directories:
+  buildResources: build
+  output: release
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+asar: true
+extraResources:
+  # whisper.cpp CPU runtime (server + ggml CPU-dispatch DLLs), model catalog digests and licence.
+  - from: resources/whisper/win-x64
+    to: whisper/win-x64
+  - from: resources/whisper/LICENSE.whisper.cpp
+    to: whisper/LICENSE.whisper.cpp
+  - from: resources/whisper/hf-tree-ggerganov-whisper.cpp.json
+    to: whisper/hf-tree-ggerganov-whisper.cpp.json
+  # The conventional Windows speech-recognition worker (PowerShell) and tray icons.
+  - from: resources/sapi
+    to: sapi
+  - from: resources
+    to: .
+    filter:
+      - '*.png'
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.ico
+  # Unsigned by default. See docs/updates-and-release.md for signing options.
+  verifyUpdateCodeSignature: false
+  requestedExecutionLevel: asInvoker
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Minutes
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  # User data in %APPDATA%\Minutes is never removed by the uninstaller.
+  deleteAppDataOnUninstall: false
+  runAfterFinish: true
+  artifactName: ${productName}-Setup-${version}.${ext}
+publish:
+  # Change owner/repo to the GitHub repository that hosts releases, then release with GH_TOKEN set.
+  provider: github
+  owner: dexterity-design
+  repo: minutes
+  releaseType: release
